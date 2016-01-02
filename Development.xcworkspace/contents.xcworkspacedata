@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:InfiniteScroll/InfiniteScroll.xcodeproj">
+      location = "group:Code/InfiniteScroll/InfiniteScroll.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Example/Example.xcodeproj">
+      location = "group:Code/Example/Example.xcodeproj">
    </FileRef>
 </Workspace>
