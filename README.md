@@ -5,9 +5,10 @@
 ![](http://i.imgur.com/19aTCJy.gif?1)
 
 ##Description
-Extend your table view to handle a loading event for fetching more data that appends to the bottom of your table view. Optionally animate the footer view easily, in just a few simple steps.
 
-The creative design of your footer view and its animations, is yours. This protocol offers distinct steps to take advantage of each phase of the loading event.
+The creative design of your UI, remains yours. All I offer here, is a protocol.
+
+Extend your table view to handle a loading event for fetching more data that appends to the bottom of your table view. Optionally animate the footer view easily, in just a few simple steps.
 
 ## Requirements
 XCode 6.4+, iOS 8.1+
