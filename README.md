@@ -6,9 +6,11 @@
 
 ##Description
 
-The creative design of your UI, remains yours. All I offer here, is a protocol.
-
 Extend your table view to handle a loading event for fetching more data that appends to the bottom of your table view. Optionally animate the footer view easily, in just a few simple steps.
+
+This library offers the creative responsibility to the implementing developer for how the footer view looks and animates. Distinct indications are provides for when a data fetch should be triggered and when each loading phases will begin and end.
+
+Checkout the wiki for more details.
 
 ## Requirements
 XCode 6.4+, iOS 8.1+
