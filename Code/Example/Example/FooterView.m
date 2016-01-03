@@ -8,39 +8,47 @@
 
 #import "FooterView.h"
 
+@interface FooterView ()
+@property (weak, nonatomic) UIImageView *bug1;
+@property (weak, nonatomic) UIImageView *bug2;
+@property (weak, nonatomic) UIImageView *bug3;
+@end
+
 @implementation FooterView
 
-+(FooterView *)buildInstanceWithWidth:(CGFloat)width {
+-(instancetype)initWithFrame:(CGRect)frame {
     
-    FooterView *footerView = [[self alloc] init];
+    self = [super initWithFrame:frame];
     
-    CGRect frame = footerView.frame;
-    frame.size.height = 44.0f;
-    frame.size.width = width;
+    if (self) {
+        
+        UIImageView *imageView;
+        
+        imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"1"]];
+        imageView.frame = CGRectMake(20, 0, 45, 44);
+        imageView.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
+        [self addSubview:imageView];
+        
+        self.bug1 = imageView;
+        
+        CGFloat width = frame.size.width;
+        
+        imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"2"]];
+        imageView.frame = CGRectMake((width / 2.0f) - (45/2.0f), 0, 45, 44);
+        imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+        [self addSubview:imageView];
+        
+        self.bug2 = imageView;
+        
+        imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"3"]];
+        imageView.frame = CGRectMake((width - 45.0f) - 20.0f, 0, 45, 44);
+        imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
+        [self addSubview:imageView];
+        
+        self.bug3 = imageView;
+    }
     
-    footerView.frame = frame;
-    
-    UIImageView *imageView;
-    imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"1"]];
-    imageView.frame = CGRectMake(20, 0, 45, 44);
-    imageView.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
-    [footerView addSubview:imageView];
-    footerView.bug1 = imageView;
-    
-    imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"2"]];
-    imageView.frame = CGRectMake((width / 2.0f) - (45/2.0f), 0, 45, 44);
-    imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-    [footerView addSubview:imageView];
-    footerView.bug2 = imageView;
-    
-    imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"3"]];
-    imageView.frame = CGRectMake((width - 45.0f) - 20.0f, 0, 45, 44);
-    imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
-    [footerView addSubview:imageView];
-    footerView.bug3 = imageView;
-    
-    return footerView;
-    
+    return self;
 }
 
 #pragma mark - Animations 

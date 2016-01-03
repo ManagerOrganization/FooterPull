@@ -10,10 +10,6 @@
 
 @interface FooterView : UIView <RRNInfiniteScrollFooterViewProtocol>
 
-@property (weak, nonatomic) UIImageView *bug1;
-@property (weak, nonatomic) UIImageView *bug2;
-@property (weak, nonatomic) UIImageView *bug3;
-
-+(FooterView *)buildInstanceWithWidth:(CGFloat)width;
+-(instancetype)initWithFrame:(CGRect)frame;
 
 @end

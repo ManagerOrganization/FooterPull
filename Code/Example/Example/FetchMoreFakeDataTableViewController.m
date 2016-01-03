@@ -18,7 +18,11 @@
     
     __weak typeof (self) weakSelf = self;
     
-    [self.tableView rrn_infinitScrollWithFooter:[FooterView buildInstanceWithWidth:self.tableView.frame.size.width]
+    CGRect frame = CGRectMake(0, 0, self.tableView.frame.size.width, 44.0f);
+    
+    FooterView *footer = [[FooterView alloc] initWithFrame:frame];
+    
+    [self.tableView rrn_infinitScrollWithFooter:footer
                                withTriggerBlock:^{
                                    
                                    __strong typeof (weakSelf) strongSelf = weakSelf;
