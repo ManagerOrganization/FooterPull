@@ -10,11 +10,8 @@
 		507466601C3646060047AC9E /* InfiniteScroll.h in Headers */ = {isa = PBXBuildFile; fileRef = 5074665F1C3646060047AC9E /* InfiniteScroll.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		507466671C3646060047AC9E /* InfiniteScroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5074665C1C3646060047AC9E /* InfiniteScroll.framework */; };
 		5074666C1C3646060047AC9E /* InfiniteScrollTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5074666B1C3646060047AC9E /* InfiniteScrollTests.m */; };
-		5074667A1C36468F0047AC9E /* RRNInfiniteScrollManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 507466761C36468E0047AC9E /* RRNInfiniteScrollManager.h */; };
-		5074667B1C36468F0047AC9E /* RRNInfiniteScrollManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 507466771C36468E0047AC9E /* RRNInfiniteScrollManager.m */; };
 		5074667C1C36468F0047AC9E /* UITableView+RRNInfiniteScroll.h in Headers */ = {isa = PBXBuildFile; fileRef = 507466781C36468F0047AC9E /* UITableView+RRNInfiniteScroll.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5074667D1C36468F0047AC9E /* UITableView+RRNInfiniteScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 507466791C36468F0047AC9E /* UITableView+RRNInfiniteScroll.m */; };
-		507466801C36472B0047AC9E /* RRNInfiniteScrollFooterViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 5074667F1C36472B0047AC9E /* RRNInfiniteScrollFooterViewProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,11 +31,8 @@
 		507466661C3646060047AC9E /* InfiniteScrollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfiniteScrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5074666B1C3646060047AC9E /* InfiniteScrollTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollTests.m; sourceTree = "<group>"; };
 		5074666D1C3646060047AC9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		507466761C36468E0047AC9E /* RRNInfiniteScrollManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RRNInfiniteScrollManager.h; path = ../../RRNInfiniteScrollManager.h; sourceTree = "<group>"; };
-		507466771C36468E0047AC9E /* RRNInfiniteScrollManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RRNInfiniteScrollManager.m; path = ../../RRNInfiniteScrollManager.m; sourceTree = "<group>"; };
 		507466781C36468F0047AC9E /* UITableView+RRNInfiniteScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableView+RRNInfiniteScroll.h"; path = "../../UITableView+RRNInfiniteScroll.h"; sourceTree = "<group>"; };
 		507466791C36468F0047AC9E /* UITableView+RRNInfiniteScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableView+RRNInfiniteScroll.m"; path = "../../UITableView+RRNInfiniteScroll.m"; sourceTree = "<group>"; };
-		5074667F1C36472B0047AC9E /* RRNInfiniteScrollFooterViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RRNInfiniteScrollFooterViewProtocol.h; path = ../../RRNInfiniteScrollFooterViewProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,11 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				5074665F1C3646060047AC9E /* InfiniteScroll.h */,
-				507466761C36468E0047AC9E /* RRNInfiniteScrollManager.h */,
-				507466771C36468E0047AC9E /* RRNInfiniteScrollManager.m */,
 				507466781C36468F0047AC9E /* UITableView+RRNInfiniteScroll.h */,
 				507466791C36468F0047AC9E /* UITableView+RRNInfiniteScroll.m */,
-				5074667F1C36472B0047AC9E /* RRNInfiniteScrollFooterViewProtocol.h */,
 				507466611C3646060047AC9E /* Info.plist */,
 			);
 			path = InfiniteScroll;
@@ -109,9 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				507466601C3646060047AC9E /* InfiniteScroll.h in Headers */,
-				5074667A1C36468F0047AC9E /* RRNInfiniteScrollManager.h in Headers */,
 				5074667C1C36468F0047AC9E /* UITableView+RRNInfiniteScroll.h in Headers */,
-				507466801C36472B0047AC9E /* RRNInfiniteScrollFooterViewProtocol.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +200,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5074667B1C36468F0047AC9E /* RRNInfiniteScrollManager.m in Sources */,
 				5074667D1C36468F0047AC9E /* UITableView+RRNInfiniteScroll.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

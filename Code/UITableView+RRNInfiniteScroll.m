@@ -7,9 +7,15 @@
 //
 
 #import "UITableView+RRNInfiniteScroll.h"
-#import "RRNInfiniteScrollManager.h"
-#import "RRNInfiniteScrollFooterViewProtocol.h"
 #import <objc/runtime.h>
+
+typedef enum : NSUInteger {
+    PULL_UP_TO_GET_MORE_STATE_IDLE,
+    PULL_UP_TO_GET_MORE_STATE_READY,
+    PULL_UP_TO_GET_MORE_STATE_TRIGGERED,
+    PULL_UP_TO_GET_MORE_STATE_LOADING,
+    PULL_UP_TO_GET_MORE_STATE_FETCHING
+} PULL_UP_TO_GET_MORE_STATE;
 
 @implementation UIScrollView (RRNScrollViewExtensions)
 
@@ -36,10 +42,21 @@
 static const char kRRNTrigger;
 static const char kRRNRefresh;
 static const char kRRNFooter;
+static const char kRRNState;
 
 typedef void(^RRNInfiniteScrollRefreshBlock)(void);
 
+-(PULL_UP_TO_GET_MORE_STATE)getCurrentState {
+    NSNumber *state = objc_getAssociatedObject(self, &kRRNState);
+    return state.integerValue;
+}
+
+-(void)setCurrentState:(PULL_UP_TO_GET_MORE_STATE)state {
+    objc_setAssociatedObject(self, &kRRNState, @(state), OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
 -(void)rrn_infinitScrollWithFooter:(UIView * _Nonnull)footerView withTriggerBlock:(RRNInfiniteScrollTriggerBlock _Nonnull)triggerBlock {
+    [self setCurrentState:PULL_UP_TO_GET_MORE_STATE_IDLE];
     objc_setAssociatedObject(self, &kRRNTrigger, triggerBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
     objc_setAssociatedObject(self, &kRRNFooter, footerView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
@@ -129,8 +146,8 @@ typedef void(^RRNInfiniteScrollRefreshBlock)(void);
     
     [self prepareFooterWithThreshold:contentRect.size.height >= visibleContentRect.size.height];
     
-    if (contentEndExceeded >= triggerHeight && [RRNInfiniteScrollManager sharedManager].state == PULL_UP_TO_GET_MORE_STATE_READY) {
-        [RRNInfiniteScrollManager sharedManager].state = PULL_UP_TO_GET_MORE_STATE_TRIGGERED;
+    if (contentEndExceeded >= triggerHeight && [self getCurrentState] == PULL_UP_TO_GET_MORE_STATE_READY) {
+        [self setCurrentState:PULL_UP_TO_GET_MORE_STATE_TRIGGERED];
     }
 }
 
@@ -143,19 +160,19 @@ typedef void(^RRNInfiniteScrollRefreshBlock)(void);
             self.contentInset = UIEdgeInsetsMake(0, 0, -self.tableFooterView.frame.size.height, 0);
         }
         
-        [RRNInfiniteScrollManager sharedManager].state = PULL_UP_TO_GET_MORE_STATE_READY;
+        [self setCurrentState:PULL_UP_TO_GET_MORE_STATE_READY];
         
     } else {
         
-        [RRNInfiniteScrollManager sharedManager].state = PULL_UP_TO_GET_MORE_STATE_IDLE;
+        [self setCurrentState:PULL_UP_TO_GET_MORE_STATE_IDLE];
         
     }
     
 }
 
 -(void)rrn_scrollViewWillBeginDecelerating {
-    if ([RRNInfiniteScrollManager sharedManager].state == PULL_UP_TO_GET_MORE_STATE_TRIGGERED) {
-        [RRNInfiniteScrollManager sharedManager].state = PULL_UP_TO_GET_MORE_STATE_LOADING;
+    if ([self getCurrentState] == PULL_UP_TO_GET_MORE_STATE_TRIGGERED) {
+        [self setCurrentState:PULL_UP_TO_GET_MORE_STATE_LOADING];
         [self setContentOffset:self.contentOffset
                       animated:YES];
         self.userInteractionEnabled = NO;
@@ -163,8 +180,8 @@ typedef void(^RRNInfiniteScrollRefreshBlock)(void);
 }
 
 -(void)rrn_scrollViewDidEndDecelerating {
-    if ([RRNInfiniteScrollManager sharedManager].state == PULL_UP_TO_GET_MORE_STATE_LOADING) {
-        [RRNInfiniteScrollManager sharedManager].state = PULL_UP_TO_GET_MORE_STATE_FETCHING;
+    if ([self getCurrentState] == PULL_UP_TO_GET_MORE_STATE_LOADING) {
+        [self setCurrentState:PULL_UP_TO_GET_MORE_STATE_FETCHING];
         [self performSelector:@selector(scrollToPointShowingFooterViewAndExecuteTriggerBlock)
                    withObject:nil
                    afterDelay:.1];

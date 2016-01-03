@@ -6,7 +6,16 @@
 //  Copyright © 2015 Robert Nash. All rights reserved.
 //
 
-#import "RRNInfiniteScrollFooterViewProtocol.h"
+#import <UIKit/UIKit.h>
+
+@protocol RRNInfiniteScrollFooterViewProtocol <NSObject>
+
+-(void)prepare:(CGFloat)progress;
+-(void)trigger;
+-(void)stop;
+-(void)reset;
+
+@end
 
 typedef void(^RRNInfiniteScrollTriggerBlock)(void);
 
