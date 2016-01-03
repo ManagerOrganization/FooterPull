@@ -157,7 +157,9 @@ typedef void(^RRNInfiniteScrollRefreshBlock)(void);
         
         if (!self.tableFooterView) {
             self.tableFooterView = objc_getAssociatedObject(self, &kRRNFooter);
-            self.contentInset = UIEdgeInsetsMake(0, 0, -self.tableFooterView.frame.size.height, 0);
+            UIEdgeInsets insets = self.contentInset;
+            insets.bottom = -self.tableFooterView.frame.size.height;
+            self.contentInset = insets;
         }
         
         [self setCurrentState:PULL_UP_TO_GET_MORE_STATE_READY];
