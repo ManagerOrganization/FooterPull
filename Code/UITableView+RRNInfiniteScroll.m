@@ -166,6 +166,25 @@ typedef void(^RRNInfiniteScrollRefreshBlock)(void);
         
     } else {
         
+        if (self.tableFooterView) {
+            
+            UIEdgeInsets insets = self.contentInset;
+            
+            UIView *view = self.tableFooterView;
+            
+            UIView <RRNInfiniteScrollFooterViewProtocol> *footerView;
+            
+            if ([view conformsToProtocol:@protocol(RRNInfiniteScrollFooterViewProtocol)]) {
+                footerView = (UIView <RRNInfiniteScrollFooterViewProtocol> *)view;
+            }
+            
+            [footerView reset];
+            
+            self.tableFooterView = nil;
+            insets.bottom = 0;
+            self.contentInset = insets;
+        }
+        
         [self setCurrentState:PULL_UP_TO_GET_MORE_STATE_IDLE];
         
     }

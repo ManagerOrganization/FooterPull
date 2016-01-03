@@ -101,6 +101,12 @@
 
 -(void)reset {
     
+    [self stop];
+    
+    self.bug1.transform = CGAffineTransformIdentity;
+    self.bug2.transform = CGAffineTransformIdentity;
+    self.bug3.transform = CGAffineTransformIdentity;
+    
 }
 
 @end
