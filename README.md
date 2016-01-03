@@ -18,11 +18,8 @@ XCode 6.4+, iOS 8.1+
 ## Manual Installation
 In XCode, select 'Add Files To Project', and select the following
 
-* RRNInfiniteScrollManager.h
-* RRNInfiniteScrollManager.m
 * UITableView+RRNInfiniteScroll.h
 * UITableView+RRNInfiniteScroll.m
-* RRNInfiniteScrollFooterViewProtocol.h
 
 ## Usage
 1. Build a UITableView, either in code or from interface builder.
@@ -49,7 +46,11 @@ In XCode, select 'Add Files To Project', and select the following
     
         [super viewDidLoad];
     
-        [self.tableView rrn_infinitScrollWithFooter:[FooterView buildInstanceWithWidth:self.tableView.frame.size.width]
+        CGRect frame = CGRectMake(0, 0, self.tableView.frame.size.width, 44.0f);
+    
+        UIView *footerView = [[UIView alloc] initWithFrame:frame];
+
+        [self.tableView rrn_infinitScrollWithFooter:footerView
                                    withTriggerBlock:^{
                                    //Fetch your data
                                }];
