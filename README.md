@@ -2,7 +2,7 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ![](http://i.imgur.com/iHGMhrk.gif?1)
-![](http://i.imgur.com/19aTCJy.gif?1)
+![](http://i.imgur.com/FqYtlP4.gif?1)
 
 ##Description
 
