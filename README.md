@@ -8,7 +8,7 @@
 
 Extend your table view to handle a loading event for fetching more data that appends to the bottom of your table view. Optionally animate the footer view easily, in just a few simple steps.
 
-This library offers the creative responsibility to the implementing developer for how the footer view looks and animates. Distinct indications are provides for when a data fetch should be triggered and when each loading phases will begin and end.
+This library offers the creative responsibility to the implementing developer for how the footer view looks and animates. Distinct indications for when a data fetch should be triggered and when each loading phases will begin and end, are provided.
 
 Checkout the wiki for more details.
 
