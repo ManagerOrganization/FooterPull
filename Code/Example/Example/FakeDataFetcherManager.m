@@ -69,7 +69,12 @@
 
 -(NSArray *)values {
     if (_values == nil) {
-        _values = [@[] mutableCopy];
+        NSMutableArray *collector = [@[] mutableCopy];
+        for (NSInteger i = 0; i < 15; i++) {
+            [collector addObject:[NSNull null]];
+        }
+        
+        _values = [collector copy];
     }
     return _values;
 }

@@ -12,7 +12,45 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
+    [self styleTableView];
     [self.tableView addSubview:self.refreshControl];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    NSLog(@"bottom: %f, left: %f, top: %f, right: %f", self.tableView.contentInset.bottom, self.tableView.contentInset.left, self.tableView.contentInset.top, self.tableView.contentInset.right);
+}
+
+#pragma mark - UITableView Styling
+
+-(void)styleTableView {
+    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    self.tableView.backgroundView = [self buildBackgroundViewWithFrame:self.tableView.bounds withBlurEffect:blur];
+    self.tableView.separatorEffect = [UIVibrancyEffect effectForBlurEffect:blur];
+}
+
+-(UIView *)buildBackgroundViewWithFrame:(CGRect)frame withBlurEffect:(UIBlurEffect *)blurEffect {
+    UIView *backgroundView = [[UIView alloc] initWithFrame:frame];
+    backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [backgroundView addSubview:[self buildImageView]];
+    [backgroundView addSubview:[self buildBlurView:blurEffect]];
+    return backgroundView;
+}
+
+-(UIImageView *)buildImageView {
+    UIImage *image = [UIImage imageNamed:@"union_jack_flag"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.frame = self.tableView.bounds;
+    imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    return imageView;
+}
+
+-(UIVisualEffectView *)buildBlurView:(UIBlurEffect *)blur {
+    UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blur];
+    visualEffectView.frame = self.tableView.bounds;
+    visualEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    return visualEffectView;
 }
 
 #pragma mark - FakeDataFetcher

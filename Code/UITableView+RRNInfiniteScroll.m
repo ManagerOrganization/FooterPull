@@ -125,7 +125,7 @@ typedef void(^RRNInfiniteScrollRefreshBlock)(void);
     
     CGRect visibleContentRect = [self visibleContentRect];
     
-    CGFloat contentEndExceeded = (self.contentOffset.y + visibleContentRect.size.height) - contentRect.size.height;
+    CGFloat contentEndExceeded = ((self.contentOffset.y + self.contentInset.top) + visibleContentRect.size.height) - contentRect.size.height;
     
     CGFloat triggerHeight = self.tableFooterView.frame.size.height;
     
@@ -233,9 +233,7 @@ typedef void(^RRNInfiniteScrollRefreshBlock)(void);
 -(CGPoint)footerViewShowingOffset {
     CGRect contentRect = [self contentRect];
     CGRect visibleContentRect = [self visibleContentRect];
-    CGFloat bloat = self.contentInset.top - self.contentInset.bottom - self.tableFooterView.frame.size.height;
-    CGFloat showFooter = bloat + self.tableFooterView.frame.size.height;
-    CGFloat yValue = contentRect.size.height - visibleContentRect.size.height + showFooter;
+    CGFloat yValue = contentRect.size.height - visibleContentRect.size.height + self.tableFooterView.frame.size.height;
     CGPoint point = CGPointMake(0, yValue);
     return point;
 }

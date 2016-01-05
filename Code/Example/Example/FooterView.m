@@ -12,6 +12,7 @@
 @property (weak, nonatomic) UIImageView *bug1;
 @property (weak, nonatomic) UIImageView *bug2;
 @property (weak, nonatomic) UIImageView *bug3;
+@property (weak, nonatomic) UIView *containerView;
 @end
 
 @implementation FooterView
@@ -22,28 +23,42 @@
     
     if (self) {
         
+        self.backgroundColor = [UIColor blackColor];
+        
+        UIView *container = [[UIView alloc] initWithFrame:self.bounds];
+        container.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        
+        [self addSubview:container];
+        
+        self.containerView = container;
+        
+        CGFloat yValue = (frame.size.height / 2.0f)-(45/2.0f);
+        
         UIImageView *imageView;
         
         imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"1"]];
-        imageView.frame = CGRectMake(20, 0, 45, 44);
+        imageView.frame = CGRectMake(20, yValue, 45, 44);
         imageView.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
-        [self addSubview:imageView];
+        
+        [container addSubview:imageView];
         
         self.bug1 = imageView;
         
         CGFloat width = frame.size.width;
         
         imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"2"]];
-        imageView.frame = CGRectMake((width / 2.0f) - (45/2.0f), 0, 45, 44);
+        imageView.frame = CGRectMake((width / 2.0f) - (45/2.0f), yValue, 45, 44);
         imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-        [self addSubview:imageView];
+        
+        [container addSubview:imageView];
         
         self.bug2 = imageView;
         
         imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"3"]];
-        imageView.frame = CGRectMake((width - 45.0f) - 20.0f, 0, 45, 44);
+        imageView.frame = CGRectMake((width - 45.0f) - 20.0f, yValue, 45, 44);
         imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
-        [self addSubview:imageView];
+        
+        [container addSubview:imageView];
         
         self.bug3 = imageView;
     }
@@ -76,10 +91,37 @@
 
 -(void)prepare:(CGFloat)progress {
     
-    CGFloat value = 1.2 * progress - .2;
-    self.bug1.transform = CGAffineTransformMakeScale(value, value);
-    self.bug2.transform = CGAffineTransformMakeScale(value, value);
-    self.bug3.transform = CGAffineTransformMakeScale(value, value);
+    [self.delegate footerView:self
+              visibleFraction:progress];
+    
+    CGFloat p = MIN(MAX(progress, 0), 1);
+    
+    self.containerView.alpha = p;
+    self.containerView.layer.transform = [self transformWithBounds:self.bounds
+                                                      withProgress:progress];
+    
+    if (p >= 1) {
+        [UIView animateWithDuration:.3 animations:^{
+//            self.containerView.backgroundColor = COLOUR_1;
+        }];
+    } else {
+        [UIView animateWithDuration:.1 animations:^{
+//            self.containerView.backgroundColor = COLOUR_2;
+        }];
+    }
+}
+
+-(CATransform3D)transformWithBounds:(CGRect)bounds withProgress:(CGFloat)progress {
+    
+    CGFloat p = MIN(MAX(progress, 0), 1);
+    CGFloat f = (1 - p);
+    
+    CATransform3D identity = CATransform3DIdentity;
+    CGFloat angle = f * M_PI_2;
+    CGFloat yOffset = CGRectGetHeight(bounds) * (f * -0.5);
+    CATransform3D rotateTransform = CATransform3DRotate(identity, angle, 1, 0, 0);
+    CATransform3D translateTransform = CATransform3DMakeTranslation(0, yOffset, 0);
+    return CATransform3DConcat(rotateTransform, translateTransform);
     
 }
 
@@ -97,6 +139,7 @@
     [self.bug2.layer removeAnimationForKey:ANIMATION_KEY];
     [self.bug3.layer removeAnimationForKey:ANIMATION_KEY];
     
+    self.containerView.layer.transform = CATransform3DIdentity;
 }
 
 -(void)reset {
@@ -106,6 +149,8 @@
     self.bug1.transform = CGAffineTransformIdentity;
     self.bug2.transform = CGAffineTransformIdentity;
     self.bug3.transform = CGAffineTransformIdentity;
+    
+    self.containerView.layer.transform = CATransform3DIdentity;
     
 }
 
