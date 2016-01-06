@@ -22,6 +22,10 @@
     NSLog(@"bottom: %f, left: %f, top: %f, right: %f", self.tableView.contentInset.bottom, self.tableView.contentInset.left, self.tableView.contentInset.top, self.tableView.contentInset.right);
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 #pragma mark - UITableView Styling
 
 -(void)styleTableView {

@@ -17,26 +17,6 @@ typedef enum : NSUInteger {
     PULL_UP_TO_GET_MORE_STATE_FETCHING
 } PULL_UP_TO_GET_MORE_STATE;
 
-@implementation UIScrollView (RRNScrollViewExtensions)
-
--(CGRect)contentRect {
-    CGFloat x = 0;
-    CGFloat y = 0;
-    CGFloat width = self.frame.size.width;
-    CGFloat height = self.contentSize.height;
-    return CGRectMake(x, y, width, height);
-}
-
--(CGRect)visibleContentRect {
-    CGFloat x = 0;
-    CGFloat y = self.contentOffset.y;
-    CGFloat width = self.frame.size.width;
-    CGFloat height = self.frame.size.height - self.contentInset.top - self.contentInset.bottom;
-    return CGRectMake(x, y, width, height);
-}
-
-@end
-
 @implementation UITableView (RRNInfiniteScroll)
 
 static const char kRRNTrigger;
@@ -121,11 +101,11 @@ typedef void(^RRNInfiniteScrollRefreshBlock)(void);
 
 -(void)rrn_scrollViewDidScroll {
     
-    CGRect contentRect = [self contentRect];
+    CGSize contentSize = [self contentSize];
     
-    CGRect visibleContentRect = [self visibleContentRect];
+    CGFloat height = self.frame.size.height - self.contentInset.top - self.contentInset.bottom;
     
-    CGFloat contentEndExceeded = ((self.contentOffset.y + self.contentInset.top) + visibleContentRect.size.height) - contentRect.size.height;
+    CGFloat contentEndExceeded = ((self.contentOffset.y + self.contentInset.top) + height) - contentSize.height;
     
     CGFloat triggerHeight = self.tableFooterView.frame.size.height;
     
@@ -144,7 +124,7 @@ typedef void(^RRNInfiniteScrollRefreshBlock)(void);
         }
     }
     
-    [self prepareFooterWithThreshold:contentRect.size.height >= visibleContentRect.size.height];
+    [self prepareFooterWithThreshold:contentSize.height >= height];
     
     if (contentEndExceeded >= triggerHeight && [self getCurrentState] == PULL_UP_TO_GET_MORE_STATE_READY) {
         [self setCurrentState:PULL_UP_TO_GET_MORE_STATE_TRIGGERED];
@@ -231,9 +211,9 @@ typedef void(^RRNInfiniteScrollRefreshBlock)(void);
 }
 
 -(CGPoint)footerViewShowingOffset {
-    CGRect contentRect = [self contentRect];
-    CGRect visibleContentRect = [self visibleContentRect];
-    CGFloat yValue = contentRect.size.height - visibleContentRect.size.height + self.tableFooterView.frame.size.height;
+    CGSize contentSize = [self contentSize];
+    CGFloat height = self.frame.size.height;
+    CGFloat yValue = contentSize.height - height;
     CGPoint point = CGPointMake(0, yValue);
     return point;
 }
