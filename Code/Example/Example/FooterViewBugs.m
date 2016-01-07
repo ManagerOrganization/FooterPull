@@ -1,19 +1,19 @@
 //
-//  FooterView.m
+//  FooterViewBugs.m
 //  Example
 //
 //  Created by Robert Nash on 31/12/2015.
 //  Copyright © 2015 Robert Nash. All rights reserved.
 //
 
-#import "FooterView.h"
+#import "FooterViewBugs.h"
 
 typedef enum : NSUInteger {
     IMAGE_STATE_DARK,
     IMAGE_STATE_LIGHT
 } IMAGE_STATE;
 
-@interface FooterView ()
+@interface FooterViewBugs ()
 @property (weak, nonatomic) UIImageView *bug1;
 @property (weak, nonatomic) UIImageView *bug2;
 @property (weak, nonatomic) UIImageView *bug3;
@@ -21,7 +21,7 @@ typedef enum : NSUInteger {
 @property (nonatomic) IMAGE_STATE state;
 @end
 
-@implementation FooterView
+@implementation FooterViewBugs
 
 #define IMAGE_1_DARK [UIImage imageNamed:@"11"]
 #define IMAGE_1_LIGHT [UIImage imageNamed:@"1"]

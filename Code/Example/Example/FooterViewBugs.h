@@ -1,5 +1,5 @@
 //
-//  FooterView.h
+//  FooterViewBugs.h
 //  Example
 //
 //  Created by Robert Nash on 31/12/2015.
@@ -8,7 +8,7 @@
 
 #import <InfiniteScroll/InfiniteScroll.h>
 
-@interface FooterView : UIView <RRNInfiniteScrollFooterViewProtocol>
+@interface FooterViewBugs : UIView <RRNInfiniteScrollFooterViewProtocol>
 
 -(instancetype)initWithFrame:(CGRect)frame;
 

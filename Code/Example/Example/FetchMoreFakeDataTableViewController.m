@@ -7,8 +7,7 @@
 //
 
 #import "FetchMoreFakeDataTableViewController.h"
-#import "FooterView.h"
-#import <InfiniteScroll/UITableView+RRNInfiniteScroll.h>
+#import "FooterViewSpinner.h"
 
 @interface FetchMoreFakeDataTableViewController ()
 @end
@@ -31,7 +30,7 @@
     
     CGRect frame = CGRectMake(0, 0, self.tableView.frame.size.width, 60.0f);
     
-    FooterView <RRNInfiniteScrollFooterViewProtocol> *footer = [[FooterView alloc] initWithFrame:frame];
+    FooterViewSpinner <RRNInfiniteScrollFooterViewProtocol> *footer = [[FooterViewSpinner alloc] initWithFrame:frame];
     
     [self.tableView rrn_infinitScrollWithFooter:footer
                                withTriggerBlock:^{

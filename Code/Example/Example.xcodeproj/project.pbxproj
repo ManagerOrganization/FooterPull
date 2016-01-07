@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5074664F1C36379A0047AC9E /* FooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5074664E1C36379A0047AC9E /* FooterView.m */; };
 		509BE33B1C3607C600E3DCC1 /* FakeDataFetcherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 509BE3391C3607C600E3DCC1 /* FakeDataFetcherManager.m */; };
 		50FA68761C359C2A0051020B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FA68751C359C2A0051020B /* main.m */; };
 		50FA68791C359C2A0051020B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FA68781C359C2A0051020B /* AppDelegate.m */; };
@@ -18,7 +17,9 @@
 		50FA689A1C359C2A0051020B /* ExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FA68991C359C2A0051020B /* ExampleUITests.m */; };
 		50FA68BB1C35FE530051020B /* FakeDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FA68BA1C35FE530051020B /* FakeDataTableViewController.m */; };
 		50FA68BE1C3603730051020B /* FetchMoreFakeDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FA68BD1C3603730051020B /* FetchMoreFakeDataTableViewController.m */; };
+		C97270B61C3DEA28006C1987 /* FooterViewSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = C97270B51C3DEA28006C1987 /* FooterViewSpinner.m */; };
 		C98024CD1C3DE68800BF67E9 /* InfiniteScroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98024CC1C3DE68800BF67E9 /* InfiniteScroll.framework */; };
+		C98024D01C3DE90600BF67E9 /* FooterViewBugs.m in Sources */ = {isa = PBXBuildFile; fileRef = C98024CF1C3DE90600BF67E9 /* FooterViewBugs.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +53,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5074664D1C36379A0047AC9E /* FooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FooterView.h; sourceTree = "<group>"; };
-		5074664E1C36379A0047AC9E /* FooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooterView.m; sourceTree = "<group>"; };
 		509BE3391C3607C600E3DCC1 /* FakeDataFetcherManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeDataFetcherManager.m; sourceTree = "<group>"; };
 		509BE33A1C3607C600E3DCC1 /* FakeDataFetcherManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeDataFetcherManager.h; sourceTree = "<group>"; };
 		50FA68711C359C2A0051020B /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,7 +73,11 @@
 		50FA68BA1C35FE530051020B /* FakeDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeDataTableViewController.m; sourceTree = "<group>"; };
 		50FA68BC1C3603730051020B /* FetchMoreFakeDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchMoreFakeDataTableViewController.h; sourceTree = "<group>"; };
 		50FA68BD1C3603730051020B /* FetchMoreFakeDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchMoreFakeDataTableViewController.m; sourceTree = "<group>"; };
+		C97270B41C3DEA28006C1987 /* FooterViewSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FooterViewSpinner.h; sourceTree = "<group>"; };
+		C97270B51C3DEA28006C1987 /* FooterViewSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooterViewSpinner.m; sourceTree = "<group>"; };
 		C98024CC1C3DE68800BF67E9 /* InfiniteScroll.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InfiniteScroll.framework; path = "../InfiniteScroll/build/Debug-iphoneos/InfiniteScroll.framework"; sourceTree = "<group>"; };
+		C98024CE1C3DE90600BF67E9 /* FooterViewBugs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FooterViewBugs.h; sourceTree = "<group>"; };
+		C98024CF1C3DE90600BF67E9 /* FooterViewBugs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooterViewBugs.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,8 +139,10 @@
 				50FA68BD1C3603730051020B /* FetchMoreFakeDataTableViewController.m */,
 				509BE33A1C3607C600E3DCC1 /* FakeDataFetcherManager.h */,
 				509BE3391C3607C600E3DCC1 /* FakeDataFetcherManager.m */,
-				5074664D1C36379A0047AC9E /* FooterView.h */,
-				5074664E1C36379A0047AC9E /* FooterView.m */,
+				C98024CE1C3DE90600BF67E9 /* FooterViewBugs.h */,
+				C98024CF1C3DE90600BF67E9 /* FooterViewBugs.m */,
+				C97270B41C3DEA28006C1987 /* FooterViewSpinner.h */,
+				C97270B51C3DEA28006C1987 /* FooterViewSpinner.m */,
 				50FA68801C359C2A0051020B /* Assets.xcassets */,
 				50FA68821C359C2A0051020B /* LaunchScreen.storyboard */,
 				50FA68851C359C2A0051020B /* Info.plist */,
@@ -295,11 +300,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97270B61C3DEA28006C1987 /* FooterViewSpinner.m in Sources */,
 				509BE33B1C3607C600E3DCC1 /* FakeDataFetcherManager.m in Sources */,
-				5074664F1C36379A0047AC9E /* FooterView.m in Sources */,
 				50FA68BB1C35FE530051020B /* FakeDataTableViewController.m in Sources */,
 				50FA68791C359C2A0051020B /* AppDelegate.m in Sources */,
 				50FA68761C359C2A0051020B /* main.m in Sources */,
+				C98024D01C3DE90600BF67E9 /* FooterViewBugs.m in Sources */,
 				50FA68BE1C3603730051020B /* FetchMoreFakeDataTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
