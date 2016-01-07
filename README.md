@@ -1,8 +1,8 @@
 [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/rob-nash/InfiniteScroll/master/Licence.md)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-![](http://i.imgur.com/iHGMhrk.gif?1)
-![](http://i.imgur.com/OBRO1Kl.gif?1)
+![](http://i.imgur.com/9XxVQ31.gif?1)
+![](http://i.imgur.com/zfHf9vI.gif?1)
 
 ##Description
 
