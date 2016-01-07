@@ -8,14 +8,27 @@
 
 #import "FooterView.h"
 
+typedef enum : NSUInteger {
+    IMAGE_STATE_DARK,
+    IMAGE_STATE_LIGHT
+} IMAGE_STATE;
+
 @interface FooterView ()
 @property (weak, nonatomic) UIImageView *bug1;
 @property (weak, nonatomic) UIImageView *bug2;
 @property (weak, nonatomic) UIImageView *bug3;
 @property (weak, nonatomic) UIView *containerView;
+@property (nonatomic) IMAGE_STATE state;
 @end
 
 @implementation FooterView
+
+#define IMAGE_1_DARK [UIImage imageNamed:@"11"]
+#define IMAGE_1_LIGHT [UIImage imageNamed:@"1"]
+#define IMAGE_2_DARK [UIImage imageNamed:@"22"]
+#define IMAGE_2_LIGHT [UIImage imageNamed:@"2"]
+#define IMAGE_3_DARK [UIImage imageNamed:@"33"]
+#define IMAGE_3_LIGHT [UIImage imageNamed:@"3"]
 
 -(instancetype)initWithFrame:(CGRect)frame {
     
@@ -23,7 +36,7 @@
     
     if (self) {
         
-        self.backgroundColor = [UIColor blackColor];
+        self.backgroundColor = [UIColor clearColor];
         
         UIView *container = [[UIView alloc] initWithFrame:self.bounds];
         container.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -32,12 +45,14 @@
         
         self.containerView = container;
         
-        CGFloat yValue = (frame.size.height / 2.0f)-(45/2.0f);
+        CGSize imageSize = CGSizeMake(90/1.5f, 88/1.5f);
+        
+        CGFloat yValue = (frame.size.height / 2.0f)-(imageSize.height/2.0f);
         
         UIImageView *imageView;
         
-        imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"1"]];
-        imageView.frame = CGRectMake(20, yValue, 45, 44);
+        imageView = [[UIImageView alloc] initWithImage:IMAGE_1_DARK];
+        imageView.frame = (CGRect) { CGPointMake(20, yValue), imageSize };
         imageView.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
         
         [container addSubview:imageView];
@@ -46,16 +61,16 @@
         
         CGFloat width = frame.size.width;
         
-        imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"2"]];
-        imageView.frame = CGRectMake((width / 2.0f) - (45/2.0f), yValue, 45, 44);
+        imageView = [[UIImageView alloc] initWithImage:IMAGE_2_DARK];
+        imageView.frame = (CGRect) { CGPointMake((width / 2.0f) - (imageSize.width/2.0f), yValue), imageSize };
         imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
         
         [container addSubview:imageView];
         
         self.bug2 = imageView;
         
-        imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"3"]];
-        imageView.frame = CGRectMake((width - 45.0f) - 20.0f, yValue, 45, 44);
+        imageView = [[UIImageView alloc] initWithImage:IMAGE_3_DARK];
+        imageView.frame = (CGRect) { CGPointMake((width - imageSize.height) - 20.0f, yValue), imageSize };
         imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
         
         [container addSubview:imageView];
@@ -91,22 +106,25 @@
 
 -(void)prepare:(CGFloat)progress {
     
-    [self.delegate footerView:self
-              visibleFraction:progress];
-    
     CGFloat p = MIN(MAX(progress, 0), 1);
     
     self.containerView.alpha = p;
     self.containerView.layer.transform = [self transformWithBounds:self.bounds
                                                       withProgress:progress];
     
-    if (p >= 1) {
+    if (p >= 1 && self.state == IMAGE_STATE_DARK) {
+        self.state = IMAGE_STATE_LIGHT;
         [UIView animateWithDuration:.3 animations:^{
-//            self.containerView.backgroundColor = COLOUR_1;
+            self.bug1.image = IMAGE_1_LIGHT;
+            self.bug2.image = IMAGE_2_LIGHT;
+            self.bug3.image = IMAGE_3_LIGHT;
         }];
-    } else {
+    } else if (p < 1 && self.state == IMAGE_STATE_LIGHT) {
+        self.state = IMAGE_STATE_DARK;
         [UIView animateWithDuration:.1 animations:^{
-//            self.containerView.backgroundColor = COLOUR_2;
+            self.bug1.image = IMAGE_1_DARK;
+            self.bug2.image = IMAGE_2_DARK;
+            self.bug3.image = IMAGE_3_DARK;
         }];
     }
 }

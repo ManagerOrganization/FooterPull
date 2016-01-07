@@ -18,8 +18,7 @@
 		50FA689A1C359C2A0051020B /* ExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FA68991C359C2A0051020B /* ExampleUITests.m */; };
 		50FA68BB1C35FE530051020B /* FakeDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FA68BA1C35FE530051020B /* FakeDataTableViewController.m */; };
 		50FA68BE1C3603730051020B /* FetchMoreFakeDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FA68BD1C3603730051020B /* FetchMoreFakeDataTableViewController.m */; };
-		C9134B521C3D86A5000FB367 /* InfiniteScroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9134B511C3D86A5000FB367 /* InfiniteScroll.framework */; };
-		C9134B531C3D86A5000FB367 /* InfiniteScroll.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9134B511C3D86A5000FB367 /* InfiniteScroll.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C98024CD1C3DE68800BF67E9 /* InfiniteScroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98024CC1C3DE68800BF67E9 /* InfiniteScroll.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +45,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C9134B531C3D86A5000FB367 /* InfiniteScroll.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,7 +74,7 @@
 		50FA68BA1C35FE530051020B /* FakeDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeDataTableViewController.m; sourceTree = "<group>"; };
 		50FA68BC1C3603730051020B /* FetchMoreFakeDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchMoreFakeDataTableViewController.h; sourceTree = "<group>"; };
 		50FA68BD1C3603730051020B /* FetchMoreFakeDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchMoreFakeDataTableViewController.m; sourceTree = "<group>"; };
-		C9134B511C3D86A5000FB367 /* InfiniteScroll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = InfiniteScroll.framework; path = "/Users/rnash/Library/Developer/Xcode/DerivedData/Development-erubttmblmadjxfgvmazqljdyuoo/Build/Products/Debug-iphoneos/InfiniteScroll.framework"; sourceTree = "<absolute>"; };
+		C98024CC1C3DE68800BF67E9 /* InfiniteScroll.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InfiniteScroll.framework; path = "../InfiniteScroll/build/Debug-iphoneos/InfiniteScroll.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9134B521C3D86A5000FB367 /* InfiniteScroll.framework in Frameworks */,
+				C98024CD1C3DE68800BF67E9 /* InfiniteScroll.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,7 +106,7 @@
 		50FA68681C359C2A0051020B = {
 			isa = PBXGroup;
 			children = (
-				C9134B511C3D86A5000FB367 /* InfiniteScroll.framework */,
+				C98024CC1C3DE68800BF67E9 /* InfiniteScroll.framework */,
 				50FA68731C359C2A0051020B /* Example */,
 				50FA688D1C359C2A0051020B /* ExampleTests */,
 				50FA68981C359C2A0051020B /* ExampleUITests */,

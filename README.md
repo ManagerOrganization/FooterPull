@@ -22,46 +22,66 @@ In XCode, select 'Add Files To Project', and select the following
 * UITableView+RRNInfiniteScroll.m
 
 ## Usage
-1. Build a UITableView, either in code or from interface builder.
-2. Build a footer view for your table view using code. 
-3. Make your footer view conform to RRNInfiniteScrollFooterViewProtocol
-4. Import UITableView+RRNInfiniteScroll.h in the view controller that handles your table view
-5. Copy and paste the following code into your project
+1 - Build a UITableView, either in code or from interface builder.
+
+2 - Prevent iOS from automatically adjusting your content insets (flip checkmark in storyboard or set the 'automaticallyAdjustsScrollViewInsets' boolean in code)
+
+3 - Manually adjust your table view content insets as you like. So for instance, if you have a navigation controller, you may want to adjust your top inset to accomodate a navigation bar and/or the status bar.
+
+4 - Import UITableView+RRNInfiniteScroll.h
+
+5 - Build a footer view for your table view using code.
 
 >Important: You have to build your footer view the old school way, using auto-resizing masks. Do not use auto-layout to constrain your footer view or any of its subviews. Do not build your footer view using a storyboard or a xib.
 
-    -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
-        [self.tableView rrn_scrollViewDidScroll];
-    }
+6 - Make your footer view conform to RRNInfiniteScrollFooterViewProtocol
 
-    -(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
-        [self.tableView rrn_scrollViewWillBeginDecelerating];
-    }
+```objective-c
+-(void)viewDidLoad {
 
-    -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-        [self.tableView rrn_scrollViewDidEndDecelerating];
-    }
+    [super viewDidLoad];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
 
-    -(void)viewDidLoad {
-    
-        [super viewDidLoad];
-    
-        CGRect frame = CGRectMake(0, 0, self.tableView.frame.size.width, 44.0f);
-    
-        UIView *footerView = [[UIView alloc] initWithFrame:frame];
+    CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+    CGFloat navHeight = self.navigationController.navigationBar.frame.size.height;
+    CGFloat top = statusBarHeight + navHeight;
 
-        [self.tableView rrn_infinitScrollWithFooter:footerView
-                                   withTriggerBlock:^{
-                                   //Fetch your data
-                               }];
-    }
+    self.tableView.contentInset = UIEdgeInsetsMake(top, 0, 0, 0);
 
-    -(void)fetchYourDataCompletionHandler {
-    
-        [self.tableView rrn_completeAnimationForNewContent:YES
-                                      performPeakAnimation:YES];
-    
-    }
+    CGRect frame = CGRectMake(0, 0, self.tableView.frame.size.width, 60.0f);
+
+    FooterView <RRNInfiniteScrollFooterViewProtocol> *view = [[FooterView alloc] initWithFrame:frame];
+
+    [self.tableView rrn_infinitScrollWithFooter:view
+                               withTriggerBlock:^{
+                               //Fetch your data
+                           }];
+}
+
+-(void)fetchYourDataCompletionHandler {
+
+    [self.tableView rrn_completeAnimationForNewContent:YES
+                                  performPeakAnimation:YES];
+
+}
+```
+
+7 - Handle the scroll view delegate like so
+
+```objective-c
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.tableView rrn_scrollViewDidScroll];
+}
+
+-(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
+    [self.tableView rrn_scrollViewWillBeginDecelerating];
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [self.tableView rrn_scrollViewDidEndDecelerating];
+}
+```
 
 ##Demo
 Try the Demo App by running the **Example** scheme in the **Development** workspace.

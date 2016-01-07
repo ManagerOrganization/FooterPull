@@ -10,7 +10,7 @@
 #import "FooterView.h"
 #import <InfiniteScroll/UITableView+RRNInfiniteScroll.h>
 
-@interface FetchMoreFakeDataTableViewController () <FooterViewDelegate>
+@interface FetchMoreFakeDataTableViewController ()
 @end
 
 @implementation FetchMoreFakeDataTableViewController
@@ -24,14 +24,14 @@
     CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
     CGFloat navHeight = self.navigationController.navigationBar.frame.size.height;
     CGFloat top = statusBarHeight + navHeight;
+    
     self.tableView.contentInset = UIEdgeInsetsMake(top, 0, 0, 0);
     
     __weak typeof (self) weakSelf = self;
     
     CGRect frame = CGRectMake(0, 0, self.tableView.frame.size.width, 60.0f);
     
-    FooterView *footer = [[FooterView alloc] initWithFrame:frame];
-    footer.delegate = self;
+    FooterView <RRNInfiniteScrollFooterViewProtocol> *footer = [[FooterView alloc] initWithFrame:frame];
     
     [self.tableView rrn_infinitScrollWithFooter:footer
                                withTriggerBlock:^{
@@ -72,18 +72,6 @@
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     [self.tableView rrn_scrollViewDidEndDecelerating];
-}
-
-#pragma mark - FooterViewDelegate
-
--(void)footerView:(FooterView *)view visibleFraction:(CGFloat)progress {
-    
-//    if (progress >= 1) {
-//        self.tableView.backgroundColor = COLOUR_1;
-//    } else {
-//        self.tableView.backgroundColor = [UIColor whiteColor];
-//    }
-    
 }
 
 @end
