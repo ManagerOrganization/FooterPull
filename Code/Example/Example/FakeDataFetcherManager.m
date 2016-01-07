@@ -67,10 +67,12 @@
 
 #pragma mark - Build Values
 
+#define VALUES_COUNT 23
+
 -(NSArray *)values {
     if (_values == nil) {
         NSMutableArray *collector = [@[] mutableCopy];
-        for (NSInteger i = 0; i < 15; i++) {
+        for (NSInteger i = 0; i < VALUES_COUNT; i++) {
             [collector addObject:[NSNull null]];
         }
         
@@ -87,7 +89,7 @@
         return [collector copy];
     }
     
-    for (NSInteger i = 0; i < 15; i++) {
+    for (NSInteger i = 0; i < VALUES_COUNT; i++) {
         [collector addObject:[NSNull null]];
     }
     
