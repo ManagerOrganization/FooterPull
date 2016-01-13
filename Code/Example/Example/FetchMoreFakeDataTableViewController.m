@@ -9,9 +9,6 @@
 #import "FetchMoreFakeDataTableViewController.h"
 #import "FooterViewSpinner.h"
 
-@interface FetchMoreFakeDataTableViewController ()
-@end
-
 @implementation FetchMoreFakeDataTableViewController
 
 -(void)viewDidLoad {

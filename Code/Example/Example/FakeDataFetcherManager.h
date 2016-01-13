@@ -10,10 +10,12 @@
 
 @interface FakeDataFetcherManager : NSObject
 
-@property (nonatomic, strong, readonly) ValuesFactory *valuesFactory;
+@property (nonatomic, strong, readonly) ValuesFactory * _Nonnull valuesFactory;
 
--(void)fetchFreshDataWithCompletion:(void (^)(BOOL dataFound))completion;
+-(instancetype _Nonnull)initWithRowCount:(NSUInteger)rowCount withMaxFetchCount:(NSUInteger)maxFetchCount;
 
--(void)fetchMoreDataWithCompletion:(void (^)(BOOL moreDataFound))completion;
+-(void)fetchFreshDataWithCompletion:(void (^ _Nonnull)(BOOL dataFound))completion;
+
+-(void)fetchMoreDataWithCompletion:(void (^ _Nonnull)(BOOL moreDataFound))completion;
 
 @end
