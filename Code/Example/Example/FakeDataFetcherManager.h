@@ -14,8 +14,8 @@
 
 -(instancetype _Nonnull)initWithRowCount:(NSUInteger)rowCount withMaxFetchCount:(NSUInteger)maxFetchCount;
 
--(void)fetchFreshDataWithCompletion:(void (^ _Nonnull)(BOOL dataFound))completion;
+-(void)fetchFreshDataWithFetchDuration:(unsigned int)seconds withCompletion:(void (^ _Nonnull)(BOOL dataFound))completion;
 
--(void)fetchMoreDataWithCompletion:(void (^ _Nonnull)(BOOL moreDataFound))completion;
+-(void)fetchMoreDataWithFetchDuration:(unsigned int)seconds withCompletion:(void (^ _Nonnull)(BOOL moreDataFound))completion;
 
 @end

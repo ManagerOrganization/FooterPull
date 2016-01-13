@@ -81,17 +81,18 @@
     
     __weak typeof(self) weakSelf = self;
     
-    [self.fetcher fetchFreshDataWithCompletion:^(BOOL dataFound) {
-        
-        __strong typeof (weakSelf) strongSelf = weakSelf;
-        
-        if (dataFound) {
-            [strongSelf.tableView reloadData];
-        }
-        
-        [strongSelf.refreshControl endRefreshing];
-        
-    }];
+    [self.fetcher fetchFreshDataWithFetchDuration:2
+                                   withCompletion:^(BOOL dataFound) {
+                                       
+                                       __strong typeof (weakSelf) strongSelf = weakSelf;
+                                       
+                                       if (dataFound) {
+                                           [strongSelf.tableView reloadData];
+                                       }
+                                       
+                                       [strongSelf.refreshControl endRefreshing];
+                                       
+                                   }];
     
 }
 

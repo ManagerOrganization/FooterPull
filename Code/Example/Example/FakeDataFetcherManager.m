@@ -34,23 +34,25 @@
 
 #pragma mark - Fetch
 
--(void)fetchFreshDataWithCompletion:(void (^ _Nonnull)(BOOL dataFound))completion {
+-(void)fetchFreshDataWithFetchDuration:(unsigned int)seconds withCompletion:(void (^ _Nonnull)(BOOL dataFound))completion {
     
-    [self fetchDataForceRefresh:YES
+    [self fetchDataWithDuration:seconds
+                   forceRefresh:YES
                  withCompletion:completion];
 }
 
--(void)fetchMoreDataWithCompletion:(void (^ _Nonnull)(BOOL moreDataFound))completion {
+-(void)fetchMoreDataWithFetchDuration:(unsigned int)seconds withCompletion:(void (^ _Nonnull)(BOOL moreDataFound))completion {
     
-    [self fetchDataForceRefresh:NO
+    [self fetchDataWithDuration:seconds
+                   forceRefresh:NO
                  withCompletion:completion];
 }
 
--(void)fetchDataForceRefresh:(BOOL)forceRefresh withCompletion:(void(^ _Nonnull)(BOOL newContent))completion {
+-(void)fetchDataWithDuration:(unsigned int)seconds forceRefresh:(BOOL)forceRefresh withCompletion:(void(^ _Nonnull)(BOOL newContent))completion {
     
     dispatch_async(self.queue, ^{
         
-        sleep(2);
+        sleep(seconds);
         
         if (forceRefresh) {
             [self.valuesFactory reset];
