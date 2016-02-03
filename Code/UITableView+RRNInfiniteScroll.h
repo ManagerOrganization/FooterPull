@@ -58,14 +58,32 @@ typedef void(^RRNInfiniteScrollTriggerBlock)(void);
 @interface UITableView (RRNInfiniteScroll)
 
 /*
- * @discussion used to insert a footer view which 
+ * @discussion used to initialise the infinite scroll mechanism. The code you pass into the trigger block will be executed when the footer view is scrolled beyond the trigger point and the user releases their touch.
+ * @param footerView a UIView that has a non-zero frame and auto-resizing masks. Do not use a xib or auto-layout to build the footer view as you may experience failure. The frame should be the same width as the table view.
  */
--(void)rrn_infinitScrollWithFooter:(UIView  * _Nonnull)footerView
+-(void)rrn_infinitScrollWithFooter:(UIView  <RRNInfiniteScrollFooterViewProtocol> * _Nonnull)footerView
                   withTriggerBlock:(RRNInfiniteScrollTriggerBlock _Nonnull)triggerBlock;
 
+/*!
+ * @discussion finishes the animation and optionally reload the tableview and/or perform a peak animation. The peak animation is a scroll animation in the opposite direction, which exposes new cells that you have appended to your table view. The distance scrolled will be the the height of the footer view.
+ * @param newContent by passing in 'YES', the table view will reload, once the footer view scrolls offscreen.
+ * @param shoudlPeak by passing in 'YES', the table view will scroll upwards, by a distance equal to that of the height of the footer view. It is necessary to have newContent i.e. new cells, at the bottom of your existing content, for the peak animation to make sense.
+ */
 -(void)rrn_completeAnimationForNewContent:(BOOL)newContent performPeakAnimation:(BOOL)shouldPeak;
+
+/*!
+ * @discussion it is mandatory to call each of these scroll view specific methods in your scroll view delegate, for normal function.
+ */
 -(void)rrn_scrollViewDidScroll;
+
+/*!
+ * @discussion it is mandatory to call each of these scroll view specific methods in your scroll view delegate, for normal function.
+ */
 -(void)rrn_scrollViewWillBeginDecelerating;
+
+/*!
+ * @discussion it is mandatory to call each of these scroll view specific methods in your scroll view delegate, for normal function.
+ */
 -(void)rrn_scrollViewDidEndDecelerating;
 
 @end
