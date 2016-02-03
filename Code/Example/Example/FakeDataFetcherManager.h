@@ -6,14 +6,16 @@
 //  Copyright © 2015 Robert Nash. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ValuesFactory.h"
 
 @interface FakeDataFetcherManager : NSObject
 
-@property (nonatomic, strong, readonly) NSArray *values;
+@property (nonatomic, strong, readonly) ValuesFactory * _Nonnull valuesFactory;
 
--(void)fetchFreshDataWithCompletion:(void (^)(BOOL dataFound))completion;
+-(instancetype _Nonnull)initWithRowCount:(NSUInteger)rowCount withMaxFetchCount:(NSUInteger)maxFetchCount;
 
--(void)fetchMoreDataWithCompletion:(void (^)(BOOL moreDataFound))completion;
+-(void)fetchFreshDataWithFetchDuration:(unsigned int)seconds withCompletion:(void (^ _Nonnull)(BOOL dataFound))completion;
+
+-(void)fetchMoreDataWithFetchDuration:(unsigned int)seconds withCompletion:(void (^ _Nonnull)(BOOL moreDataFound))completion;
 
 @end

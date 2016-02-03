@@ -20,6 +20,7 @@
 		C97270B61C3DEA28006C1987 /* FooterViewSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = C97270B51C3DEA28006C1987 /* FooterViewSpinner.m */; };
 		C98024CD1C3DE68800BF67E9 /* InfiniteScroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98024CC1C3DE68800BF67E9 /* InfiniteScroll.framework */; };
 		C98024D01C3DE90600BF67E9 /* FooterViewBugs.m in Sources */ = {isa = PBXBuildFile; fileRef = C98024CF1C3DE90600BF67E9 /* FooterViewBugs.m */; };
+		C9FE459E1C3ED706002A0C6B /* ValuesFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FE459D1C3ED706002A0C6B /* ValuesFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		C98024CC1C3DE68800BF67E9 /* InfiniteScroll.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InfiniteScroll.framework; path = "../InfiniteScroll/build/Debug-iphoneos/InfiniteScroll.framework"; sourceTree = "<group>"; };
 		C98024CE1C3DE90600BF67E9 /* FooterViewBugs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FooterViewBugs.h; sourceTree = "<group>"; };
 		C98024CF1C3DE90600BF67E9 /* FooterViewBugs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooterViewBugs.m; sourceTree = "<group>"; };
+		C9FE459C1C3ED706002A0C6B /* ValuesFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValuesFactory.h; sourceTree = "<group>"; };
+		C9FE459D1C3ED706002A0C6B /* ValuesFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValuesFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +142,8 @@
 				50FA68BD1C3603730051020B /* FetchMoreFakeDataTableViewController.m */,
 				509BE33A1C3607C600E3DCC1 /* FakeDataFetcherManager.h */,
 				509BE3391C3607C600E3DCC1 /* FakeDataFetcherManager.m */,
+				C9FE459C1C3ED706002A0C6B /* ValuesFactory.h */,
+				C9FE459D1C3ED706002A0C6B /* ValuesFactory.m */,
 				C98024CE1C3DE90600BF67E9 /* FooterViewBugs.h */,
 				C98024CF1C3DE90600BF67E9 /* FooterViewBugs.m */,
 				C97270B41C3DEA28006C1987 /* FooterViewSpinner.h */,
@@ -302,6 +307,7 @@
 			files = (
 				C97270B61C3DEA28006C1987 /* FooterViewSpinner.m in Sources */,
 				509BE33B1C3607C600E3DCC1 /* FakeDataFetcherManager.m in Sources */,
+				C9FE459E1C3ED706002A0C6B /* ValuesFactory.m in Sources */,
 				50FA68BB1C35FE530051020B /* FakeDataTableViewController.m in Sources */,
 				50FA68791C359C2A0051020B /* AppDelegate.m in Sources */,
 				50FA68761C359C2A0051020B /* main.m in Sources */,

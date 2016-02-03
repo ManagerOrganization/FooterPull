@@ -12,7 +12,7 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    [self styleTableView];
+    [self styleTableView:self.tableView];
     [self.tableView addSubview:self.refreshControl];
 }
 
@@ -22,31 +22,37 @@
 
 #pragma mark - UITableView Styling
 
--(void)styleTableView {
+-(void)styleTableView:(UITableView *)tableView {
+    
     UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-    self.tableView.backgroundView = [self buildBackgroundViewWithFrame:self.tableView.bounds withBlurEffect:blur];
-    self.tableView.separatorEffect = [UIVibrancyEffect effectForBlurEffect:blur];
+    
+    CGRect frame = tableView.bounds;
+    
+    UIView *backgroundView = [self buildBackgroundViewWithFrame:frame];
+    [backgroundView addSubview:[self buildImageViewWithFrame:frame]];
+    [backgroundView addSubview:[self buildBlurViewWithBlurEffect:blur withFrame:frame]];
+    
+    tableView.backgroundView = backgroundView;
+    tableView.separatorEffect = [UIVibrancyEffect effectForBlurEffect:blur];
 }
 
--(UIView *)buildBackgroundViewWithFrame:(CGRect)frame withBlurEffect:(UIBlurEffect *)blurEffect {
+-(UIView *)buildBackgroundViewWithFrame:(CGRect)frame {
     UIView *backgroundView = [[UIView alloc] initWithFrame:frame];
     backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [backgroundView addSubview:[self buildImageView]];
-    [backgroundView addSubview:[self buildBlurView:blurEffect]];
     return backgroundView;
 }
 
--(UIImageView *)buildImageView {
+-(UIImageView *)buildImageViewWithFrame:(CGRect)frame {
     UIImage *image = [UIImage imageNamed:@"union_jack_flag"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    imageView.frame = self.tableView.bounds;
+    imageView.frame = frame;
     imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     return imageView;
 }
 
--(UIVisualEffectView *)buildBlurView:(UIBlurEffect *)blur {
+-(UIVisualEffectView *)buildBlurViewWithBlurEffect:(UIBlurEffect *)blur withFrame:(CGRect)frame {
     UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blur];
-    visualEffectView.frame = self.tableView.bounds;
+    visualEffectView.frame = frame;
     visualEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     return visualEffectView;
 }
@@ -55,7 +61,7 @@
 
 -(FakeDataFetcherManager *)fetcher {
     if (_fetcher == nil) {
-        _fetcher = [FakeDataFetcherManager new];
+        _fetcher = [[FakeDataFetcherManager alloc] initWithRowCount:ROW_COUNT withMaxFetchCount:MAX_FETCHES];
     }
     return _fetcher;
 }
@@ -75,17 +81,18 @@
     
     __weak typeof(self) weakSelf = self;
     
-    [self.fetcher fetchFreshDataWithCompletion:^(BOOL dataFound) {
-        
-        __strong typeof (weakSelf) strongSelf = weakSelf;
-        
-        if (dataFound) {
-            [strongSelf.tableView reloadData];
-        }
-        
-        [strongSelf.refreshControl endRefreshing];
-        
-    }];
+    [self.fetcher fetchFreshDataWithFetchDuration:2
+                                   withCompletion:^(BOOL dataFound) {
+                                       
+                                       __strong typeof (weakSelf) strongSelf = weakSelf;
+                                       
+                                       if (dataFound) {
+                                           [strongSelf.tableView reloadData];
+                                       }
+                                       
+                                       [strongSelf.refreshControl endRefreshing];
+                                       
+                                   }];
     
 }
 
@@ -96,7 +103,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.fetcher.values.count;
+    return self.fetcher.valuesFactory.values.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

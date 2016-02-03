@@ -9,9 +9,6 @@
 #import "FetchMoreFakeDataTableViewController.h"
 #import "FooterViewSpinner.h"
 
-@interface FetchMoreFakeDataTableViewController ()
-@end
-
 @implementation FetchMoreFakeDataTableViewController
 
 -(void)viewDidLoad {
@@ -37,7 +34,8 @@
                                    
                                    __strong typeof (weakSelf) strongSelf = weakSelf;
                                    
-                                   [strongSelf.fetcher fetchMoreDataWithCompletion:[strongSelf fetchMoreDataCompletionHandler]];
+                                   [strongSelf.fetcher fetchMoreDataWithFetchDuration:2
+                                                                       withCompletion:[strongSelf fetchMoreDataCompletionHandler]];
                                    
                                }];
     
