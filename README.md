@@ -73,7 +73,7 @@ Your code should look something like this.
 ```
 
 ##Demo
-Try the Demo App by running the **Example** scheme in the **Development** workspace.
+Try the Demo App by running the **Example** scheme in the **OpenMe** workspace.
 
 ## Contributions
 Please use the 'OpenMe' workspace.
