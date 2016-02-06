@@ -39,9 +39,8 @@ Your code should look something like this.
 
     CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
     CGFloat navHeight = self.navigationController.navigationBar.frame.size.height;
-    CGFloat top = statusBarHeight + navHeight;
 
-    self.tableView.contentInset = UIEdgeInsetsMake(top, 0, 0, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(statusBarHeight + navHeight, 0, 0, 0);
 
     CGRect frame = CGRectMake(0, 0, self.tableView.frame.size.width, 60.0f);
 
@@ -77,4 +76,4 @@ Your code should look something like this.
 Try the Demo App by running the **Example** scheme in the **Development** workspace.
 
 ## Contributions
-Please use the 'Development' workspace.
+Please use the 'OpenMe' workspace.
