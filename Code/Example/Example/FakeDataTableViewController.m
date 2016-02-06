@@ -12,6 +12,12 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
+    
+    CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+    CGFloat navHeight = self.navigationController.navigationBar.frame.size.height;
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(statusBarHeight + navHeight, 0, 0, 0);
+    
     [self styleTableView:self.tableView];
     [self.tableView addSubview:self.refreshControl];
 }
@@ -27,6 +33,7 @@
     UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
     
     CGRect frame = tableView.bounds;
+    frame.origin = CGPointZero;
     
     UIView *backgroundView = [self buildBackgroundViewWithFrame:frame];
     [backgroundView addSubview:[self buildImageViewWithFrame:frame]];
@@ -107,7 +114,6 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     cell.textLabel.text = [NSString stringWithFormat:@"Value %lu", (unsigned long)indexPath.row+1];
     return cell;
@@ -117,6 +123,11 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 44;
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    cell.backgroundColor = [UIColor clearColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
 }
 
 @end

@@ -15,14 +15,6 @@
     
     [super viewDidLoad];
     
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    
-    CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
-    CGFloat navHeight = self.navigationController.navigationBar.frame.size.height;
-    CGFloat top = statusBarHeight + navHeight;
-    
-    self.tableView.contentInset = UIEdgeInsetsMake(top, 0, 0, 0);
-    
     __weak typeof (self) weakSelf = self;
     
     CGRect frame = CGRectMake(0, 0, self.tableView.frame.size.width, 60.0f);
@@ -50,11 +42,6 @@
         [weakSelf.tableView rrn_completeAnimationForNewContent:moreDataFound
                                           performPeakAnimation:moreDataFound];
     };
-}
-
--(void)tableView:(UITableView *)tableView willDisplayCell:(nonnull UITableViewCell *)cell forRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    cell.textLabel.textColor = [UIColor whiteColor];
-    cell.backgroundColor = [UIColor clearColor];
 }
 
 #pragma mark - UIScrollViewDelegate
