@@ -109,13 +109,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		506BA1101C8E0C9D006C834E /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				50FA68731C359C2A0051020B /* Example */,
+				50FA688D1C359C2A0051020B /* ExampleTests */,
+				50FA68981C359C2A0051020B /* ExampleUITests */,
+			);
+			name = Targets;
+			sourceTree = "<group>";
+		};
 		50FA68681C359C2A0051020B = {
 			isa = PBXGroup;
 			children = (
 				C98024CC1C3DE68800BF67E9 /* InfiniteScroll.framework */,
-				50FA68731C359C2A0051020B /* Example */,
-				50FA688D1C359C2A0051020B /* ExampleTests */,
-				50FA68981C359C2A0051020B /* ExampleUITests */,
+				506BA1101C8E0C9D006C834E /* Targets */,
 				50FA68721C359C2A0051020B /* Products */,
 			);
 			sourceTree = "<group>";
