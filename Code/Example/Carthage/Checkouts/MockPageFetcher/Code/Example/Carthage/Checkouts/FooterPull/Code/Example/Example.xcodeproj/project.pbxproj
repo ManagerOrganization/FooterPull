@@ -15,6 +15,8 @@
 		506BA1511C8E0F7A006C834E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 506BA14F1C8E0F7A006C834E /* LaunchScreen.storyboard */; };
 		506BA15C1C8E0F7A006C834E /* ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 506BA15B1C8E0F7A006C834E /* ExampleTests.m */; };
 		506BA1671C8E0F7A006C834E /* ExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 506BA1661C8E0F7A006C834E /* ExampleUITests.m */; };
+		506BA1E81C8E574F006C834E /* FakeDataFetcherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 506BA1E61C8E574F006C834E /* FakeDataFetcherManager.m */; };
+		506BA1E91C8E574F006C834E /* ValuesFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 506BA1E71C8E574F006C834E /* ValuesFactory.m */; };
 		509118491C9D840F0020EE5C /* InfiniteScrollKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509118401C9D828F0020EE5C /* InfiniteScrollKit.framework */; };
 		5091184A1C9D840F0020EE5C /* InfiniteScrollKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 509118401C9D828F0020EE5C /* InfiniteScrollKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5091187E1C9D85D20020EE5C /* FooterPull.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5091187D1C9D85D20020EE5C /* FooterPull.framework */; };
@@ -68,6 +70,10 @@
 		506BA1621C8E0F7A006C834E /* ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		506BA1661C8E0F7A006C834E /* ExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleUITests.m; sourceTree = "<group>"; };
 		506BA1681C8E0F7B006C834E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		506BA1E41C8E574F006C834E /* FakeDataFetcherManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeDataFetcherManager.h; sourceTree = "<group>"; };
+		506BA1E51C8E574F006C834E /* ValuesFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValuesFactory.h; sourceTree = "<group>"; };
+		506BA1E61C8E574F006C834E /* FakeDataFetcherManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeDataFetcherManager.m; sourceTree = "<group>"; };
+		506BA1E71C8E574F006C834E /* ValuesFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValuesFactory.m; sourceTree = "<group>"; };
 		509118401C9D828F0020EE5C /* InfiniteScrollKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InfiniteScrollKit.framework; path = ../../../Carthage/Build/iOS/InfiniteScrollKit.framework; sourceTree = "<group>"; };
 		5091187D1C9D85D20020EE5C /* FooterPull.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FooterPull.framework; path = "../../FooterPull/build/Debug-iphoneos/FooterPull.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				509118431C9D83AB0020EE5C /* AppDelegate */,
+				509118481C9D83E10020EE5C /* Model */,
 				509118471C9D83CC0020EE5C /* Storyboards */,
 				509118441C9D83B30020EE5C /* ViewController */,
 				509118421C9D839F0020EE5C /* Dependencies */,
@@ -194,6 +201,24 @@
 			name = ViewController;
 			sourceTree = "<group>";
 		};
+		509118451C9D83B80020EE5C /* FakeDataFetcherManager */ = {
+			isa = PBXGroup;
+			children = (
+				506BA1E41C8E574F006C834E /* FakeDataFetcherManager.h */,
+				506BA1E61C8E574F006C834E /* FakeDataFetcherManager.m */,
+			);
+			name = FakeDataFetcherManager;
+			sourceTree = "<group>";
+		};
+		509118461C9D83BE0020EE5C /* ValuesFactory */ = {
+			isa = PBXGroup;
+			children = (
+				506BA1E51C8E574F006C834E /* ValuesFactory.h */,
+				506BA1E71C8E574F006C834E /* ValuesFactory.m */,
+			);
+			name = ValuesFactory;
+			sourceTree = "<group>";
+		};
 		509118471C9D83CC0020EE5C /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +226,15 @@
 				506BA14F1C8E0F7A006C834E /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		509118481C9D83E10020EE5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				509118451C9D83B80020EE5C /* FakeDataFetcherManager */,
+				509118461C9D83BE0020EE5C /* ValuesFactory */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,8 +368,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				506BA1E81C8E574F006C834E /* FakeDataFetcherManager.m in Sources */,
 				506BA1491C8E0F7A006C834E /* ViewController.m in Sources */,
 				506BA1461C8E0F7A006C834E /* AppDelegate.m in Sources */,
+				506BA1E91C8E574F006C834E /* ValuesFactory.m in Sources */,
 				506BA1431C8E0F7A006C834E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

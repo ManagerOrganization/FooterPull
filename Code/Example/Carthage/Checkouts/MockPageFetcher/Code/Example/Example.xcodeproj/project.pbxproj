@@ -15,9 +15,11 @@
 		506BA1511C8E0F7A006C834E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 506BA14F1C8E0F7A006C834E /* LaunchScreen.storyboard */; };
 		506BA15C1C8E0F7A006C834E /* ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 506BA15B1C8E0F7A006C834E /* ExampleTests.m */; };
 		506BA1671C8E0F7A006C834E /* ExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 506BA1661C8E0F7A006C834E /* ExampleUITests.m */; };
-		509118491C9D840F0020EE5C /* InfiniteScrollKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509118401C9D828F0020EE5C /* InfiniteScrollKit.framework */; };
-		5091184A1C9D840F0020EE5C /* InfiniteScrollKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 509118401C9D828F0020EE5C /* InfiniteScrollKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5091187E1C9D85D20020EE5C /* FooterPull.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5091187D1C9D85D20020EE5C /* FooterPull.framework */; };
+		506BA1761C8E12F2006C834E /* Fetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506BA1751C8E12F2006C834E /* Fetcher.framework */; };
+		509118881C9D9C880020EE5C /* FooterPull.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509118861C9D9C880020EE5C /* FooterPull.framework */; };
+		509118891C9D9C880020EE5C /* FooterPull.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 509118861C9D9C880020EE5C /* FooterPull.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5091188A1C9D9C880020EE5C /* InfiniteScrollKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509118871C9D9C880020EE5C /* InfiniteScrollKit.framework */; };
+		5091188B1C9D9C880020EE5C /* InfiniteScrollKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 509118871C9D9C880020EE5C /* InfiniteScrollKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,13 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		506BA1E11C8E54DE006C834E /* Embed Frameworks */ = {
+		5091188C1C9D9C880020EE5C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5091184A1C9D840F0020EE5C /* InfiniteScrollKit.framework in Embed Frameworks */,
+				5091188B1C9D9C880020EE5C /* InfiniteScrollKit.framework in Embed Frameworks */,
+				509118891C9D9C880020EE5C /* FooterPull.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,8 +71,9 @@
 		506BA1621C8E0F7A006C834E /* ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		506BA1661C8E0F7A006C834E /* ExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleUITests.m; sourceTree = "<group>"; };
 		506BA1681C8E0F7B006C834E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		509118401C9D828F0020EE5C /* InfiniteScrollKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InfiniteScrollKit.framework; path = ../../../Carthage/Build/iOS/InfiniteScrollKit.framework; sourceTree = "<group>"; };
-		5091187D1C9D85D20020EE5C /* FooterPull.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FooterPull.framework; path = "../../FooterPull/build/Debug-iphoneos/FooterPull.framework"; sourceTree = "<group>"; };
+		506BA1751C8E12F2006C834E /* Fetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fetcher.framework; path = "../../Fetcher/build/Debug-iphoneos/Fetcher.framework"; sourceTree = "<group>"; };
+		509118861C9D9C880020EE5C /* FooterPull.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FooterPull.framework; path = Carthage/Build/iOS/FooterPull.framework; sourceTree = "<group>"; };
+		509118871C9D9C880020EE5C /* InfiniteScrollKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InfiniteScrollKit.framework; path = Carthage/Build/iOS/InfiniteScrollKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +81,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				509118491C9D840F0020EE5C /* InfiniteScrollKit.framework in Frameworks */,
-				5091187E1C9D85D20020EE5C /* FooterPull.framework in Frameworks */,
+				5091188A1C9D9C880020EE5C /* InfiniteScrollKit.framework in Frameworks */,
+				509118881C9D9C880020EE5C /* FooterPull.framework in Frameworks */,
+				506BA1761C8E12F2006C834E /* Fetcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +107,8 @@
 		506BA1351C8E0F7A006C834E = {
 			isa = PBXGroup;
 			children = (
+				509118861C9D9C880020EE5C /* FooterPull.framework */,
+				509118871C9D9C880020EE5C /* InfiniteScrollKit.framework */,
 				506BA1741C8E1010006C834E /* Targets */,
 				506BA13F1C8E0F7A006C834E /* Products */,
 			);
@@ -120,10 +127,15 @@
 		506BA1401C8E0F7A006C834E /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				509118431C9D83AB0020EE5C /* AppDelegate */,
-				509118471C9D83CC0020EE5C /* Storyboards */,
-				509118441C9D83B30020EE5C /* ViewController */,
-				509118421C9D839F0020EE5C /* Dependencies */,
+				506BA1751C8E12F2006C834E /* Fetcher.framework */,
+				506BA1441C8E0F7A006C834E /* AppDelegate.h */,
+				506BA1451C8E0F7A006C834E /* AppDelegate.m */,
+				506BA1471C8E0F7A006C834E /* ViewController.h */,
+				506BA1481C8E0F7A006C834E /* ViewController.m */,
+				506BA14A1C8E0F7A006C834E /* Main.storyboard */,
+				506BA14D1C8E0F7A006C834E /* Assets.xcassets */,
+				506BA14F1C8E0F7A006C834E /* LaunchScreen.storyboard */,
+				506BA1521C8E0F7A006C834E /* Info.plist */,
 				506BA1411C8E0F7A006C834E /* Supporting Files */,
 			);
 			path = Example;
@@ -132,8 +144,6 @@
 		506BA1411C8E0F7A006C834E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				506BA14D1C8E0F7A006C834E /* Assets.xcassets */,
-				506BA1521C8E0F7A006C834E /* Info.plist */,
 				506BA1421C8E0F7A006C834E /* main.m */,
 			);
 			name = "Supporting Files";
@@ -167,42 +177,6 @@
 			name = Targets;
 			sourceTree = "<group>";
 		};
-		509118421C9D839F0020EE5C /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				5091187D1C9D85D20020EE5C /* FooterPull.framework */,
-				509118401C9D828F0020EE5C /* InfiniteScrollKit.framework */,
-			);
-			name = Dependencies;
-			sourceTree = "<group>";
-		};
-		509118431C9D83AB0020EE5C /* AppDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				506BA1441C8E0F7A006C834E /* AppDelegate.h */,
-				506BA1451C8E0F7A006C834E /* AppDelegate.m */,
-			);
-			name = AppDelegate;
-			sourceTree = "<group>";
-		};
-		509118441C9D83B30020EE5C /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				506BA1471C8E0F7A006C834E /* ViewController.h */,
-				506BA1481C8E0F7A006C834E /* ViewController.m */,
-			);
-			name = ViewController;
-			sourceTree = "<group>";
-		};
-		509118471C9D83CC0020EE5C /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				506BA14A1C8E0F7A006C834E /* Main.storyboard */,
-				506BA14F1C8E0F7A006C834E /* LaunchScreen.storyboard */,
-			);
-			name = Storyboards;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -213,7 +187,7 @@
 				506BA13A1C8E0F7A006C834E /* Sources */,
 				506BA13B1C8E0F7A006C834E /* Frameworks */,
 				506BA13C1C8E0F7A006C834E /* Resources */,
-				506BA1E11C8E54DE006C834E /* Embed Frameworks */,
+				5091188C1C9D9C880020EE5C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -479,7 +453,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"${PROJECT_DIR}/../../Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Example",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -494,7 +469,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"${PROJECT_DIR}/../../Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Example",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		506BA11F1C8E0F30006C834E /* Fetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 506BA11E1C8E0F30006C834E /* Fetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		506BA1261C8E0F30006C834E /* Fetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506BA11B1C8E0F30006C834E /* Fetcher.framework */; };
+		506BA12B1C8E0F30006C834E /* FetcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 506BA12A1C8E0F30006C834E /* FetcherTests.m */; };
+		506BA1791C8E139C006C834E /* RRNFetchManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 506BA1771C8E139C006C834E /* RRNFetchManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		506BA17A1C8E139C006C834E /* RRNFetchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 506BA1781C8E139C006C834E /* RRNFetchManager.m */; };
+		506BA17D1C8E1604006C834E /* RRNValuesFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 506BA17B1C8E1604006C834E /* RRNValuesFactory.h */; };
+		506BA17E1C8E1604006C834E /* RRNValuesFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 506BA17C1C8E1604006C834E /* RRNValuesFactory.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		506BA1271C8E0F30006C834E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 506BA1121C8E0F2F006C834E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 506BA11A1C8E0F30006C834E;
+			remoteInfo = Fetcher;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		506BA11B1C8E0F30006C834E /* Fetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Fetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		506BA11E1C8E0F30006C834E /* Fetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Fetcher.h; sourceTree = "<group>"; };
+		506BA1201C8E0F30006C834E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		506BA1251C8E0F30006C834E /* FetcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		506BA12A1C8E0F30006C834E /* FetcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FetcherTests.m; sourceTree = "<group>"; };
+		506BA12C1C8E0F30006C834E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		506BA1771C8E139C006C834E /* RRNFetchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRNFetchManager.h; sourceTree = "<group>"; };
+		506BA1781C8E139C006C834E /* RRNFetchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRNFetchManager.m; sourceTree = "<group>"; };
+		506BA17B1C8E1604006C834E /* RRNValuesFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRNValuesFactory.h; sourceTree = "<group>"; };
+		506BA17C1C8E1604006C834E /* RRNValuesFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRNValuesFactory.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		506BA1171C8E0F30006C834E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		506BA1221C8E0F30006C834E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				506BA1261C8E0F30006C834E /* Fetcher.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		506BA1111C8E0F2F006C834E = {
+			isa = PBXGroup;
+			children = (
+				506BA1801C8E17DF006C834E /* Targets */,
+				506BA11C1C8E0F30006C834E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		506BA11C1C8E0F30006C834E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				506BA11B1C8E0F30006C834E /* Fetcher.framework */,
+				506BA1251C8E0F30006C834E /* FetcherTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		506BA11D1C8E0F30006C834E /* Fetcher */ = {
+			isa = PBXGroup;
+			children = (
+				506BA11E1C8E0F30006C834E /* Fetcher.h */,
+				506BA1771C8E139C006C834E /* RRNFetchManager.h */,
+				506BA1781C8E139C006C834E /* RRNFetchManager.m */,
+				506BA17B1C8E1604006C834E /* RRNValuesFactory.h */,
+				506BA17C1C8E1604006C834E /* RRNValuesFactory.m */,
+				506BA17F1C8E17CB006C834E /* SupportingFiles */,
+			);
+			path = Fetcher;
+			sourceTree = "<group>";
+		};
+		506BA1291C8E0F30006C834E /* FetcherTests */ = {
+			isa = PBXGroup;
+			children = (
+				506BA12A1C8E0F30006C834E /* FetcherTests.m */,
+				506BA12C1C8E0F30006C834E /* Info.plist */,
+			);
+			path = FetcherTests;
+			sourceTree = "<group>";
+		};
+		506BA17F1C8E17CB006C834E /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				506BA1201C8E0F30006C834E /* Info.plist */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		506BA1801C8E17DF006C834E /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				506BA11D1C8E0F30006C834E /* Fetcher */,
+				506BA1291C8E0F30006C834E /* FetcherTests */,
+			);
+			name = Targets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		506BA1181C8E0F30006C834E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				506BA1791C8E139C006C834E /* RRNFetchManager.h in Headers */,
+				506BA17D1C8E1604006C834E /* RRNValuesFactory.h in Headers */,
+				506BA11F1C8E0F30006C834E /* Fetcher.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		506BA11A1C8E0F30006C834E /* Fetcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 506BA12F1C8E0F30006C834E /* Build configuration list for PBXNativeTarget "Fetcher" */;
+			buildPhases = (
+				506BA1161C8E0F30006C834E /* Sources */,
+				506BA1171C8E0F30006C834E /* Frameworks */,
+				506BA1181C8E0F30006C834E /* Headers */,
+				506BA1191C8E0F30006C834E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fetcher;
+			productName = Fetcher;
+			productReference = 506BA11B1C8E0F30006C834E /* Fetcher.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		506BA1241C8E0F30006C834E /* FetcherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 506BA1321C8E0F30006C834E /* Build configuration list for PBXNativeTarget "FetcherTests" */;
+			buildPhases = (
+				506BA1211C8E0F30006C834E /* Sources */,
+				506BA1221C8E0F30006C834E /* Frameworks */,
+				506BA1231C8E0F30006C834E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				506BA1281C8E0F30006C834E /* PBXTargetDependency */,
+			);
+			name = FetcherTests;
+			productName = FetcherTests;
+			productReference = 506BA1251C8E0F30006C834E /* FetcherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		506BA1121C8E0F2F006C834E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RRN;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Robert Nash";
+				TargetAttributes = {
+					506BA11A1C8E0F30006C834E = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					506BA1241C8E0F30006C834E = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 506BA1151C8E0F2F006C834E /* Build configuration list for PBXProject "Fetcher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 506BA1111C8E0F2F006C834E;
+			productRefGroup = 506BA11C1C8E0F30006C834E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				506BA11A1C8E0F30006C834E /* Fetcher */,
+				506BA1241C8E0F30006C834E /* FetcherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		506BA1191C8E0F30006C834E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		506BA1231C8E0F30006C834E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		506BA1161C8E0F30006C834E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				506BA17A1C8E139C006C834E /* RRNFetchManager.m in Sources */,
+				506BA17E1C8E1604006C834E /* RRNValuesFactory.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		506BA1211C8E0F30006C834E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				506BA12B1C8E0F30006C834E /* FetcherTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		506BA1281C8E0F30006C834E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 506BA11A1C8E0F30006C834E /* Fetcher */;
+			targetProxy = 506BA1271C8E0F30006C834E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		506BA12D1C8E0F30006C834E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		506BA12E1C8E0F30006C834E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		506BA1301C8E0F30006C834E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Fetcher/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.robertnash.Fetcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		506BA1311C8E0F30006C834E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Fetcher/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.robertnash.Fetcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		506BA1331C8E0F30006C834E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FetcherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.robertnash.FetcherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		506BA1341C8E0F30006C834E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FetcherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.robertnash.FetcherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		506BA1151C8E0F2F006C834E /* Build configuration list for PBXProject "Fetcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				506BA12D1C8E0F30006C834E /* Debug */,
+				506BA12E1C8E0F30006C834E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		506BA12F1C8E0F30006C834E /* Build configuration list for PBXNativeTarget "Fetcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				506BA1301C8E0F30006C834E /* Debug */,
+				506BA1311C8E0F30006C834E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		506BA1321C8E0F30006C834E /* Build configuration list for PBXNativeTarget "FetcherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				506BA1331C8E0F30006C834E /* Debug */,
+				506BA1341C8E0F30006C834E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 506BA1121C8E0F2F006C834E /* Project object */;
+}
