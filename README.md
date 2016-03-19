@@ -7,7 +7,7 @@ Footer Pull
 
 <sup>XCode 6.4+ iOS 8.0+</sup>
 
-Several pull-like loading events for table views that have scrollable content.
+Example implementations of [InfiniteScrollKit](https://github.com/rob-nash/InfiniteScrollKit.git).
 
 ![](http://i.imgur.com/9XxVQ31.gif?1)
 ![](http://i.imgur.com/zfHf9vI.gif?1)
