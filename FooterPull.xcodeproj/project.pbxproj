@@ -15,13 +15,13 @@
 		508408FB1C9DACE4006AC55D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 508408F91C9DACE4006AC55D /* LaunchScreen.storyboard */; };
 		508409061C9DACE4006AC55D /* ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 508409051C9DACE4006AC55D /* ExampleTests.m */; };
 		508409111C9DACE4006AC55D /* ExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 508409101C9DACE4006AC55D /* ExampleUITests.m */; };
-		5084091F1C9DADC5006AC55D /* Fetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5084091D1C9DADC5006AC55D /* Fetcher.framework */; };
-		508409201C9DADC5006AC55D /* Fetcher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5084091D1C9DADC5006AC55D /* Fetcher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		508409211C9DADC5006AC55D /* InfiniteScrollKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5084091E1C9DADC5006AC55D /* InfiniteScrollKit.framework */; };
-		508409221C9DADC5006AC55D /* InfiniteScrollKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5084091E1C9DADC5006AC55D /* InfiniteScrollKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		508409241C9DAE37006AC55D /* RRNFooterViewBugs.m in Sources */ = {isa = PBXBuildFile; fileRef = 509118761C9D85B20020EE5C /* RRNFooterViewBugs.m */; };
 		508409251C9DAE3B006AC55D /* RRNFooterViewSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 509118781C9D85B20020EE5C /* RRNFooterViewSpinner.m */; };
 		508409261C9DAE72006AC55D /* RRNFooterPullAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 509118901C9D9F220020EE5C /* RRNFooterPullAssets.xcassets */; };
+		508409281C9DB5F8006AC55D /* Fetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508409271C9DB5F8006AC55D /* Fetcher.framework */; };
+		508409291C9DB5F8006AC55D /* Fetcher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 508409271C9DB5F8006AC55D /* Fetcher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5084092B1C9DB633006AC55D /* InfiniteScrollKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5084092A1C9DB633006AC55D /* InfiniteScrollKit.framework */; };
+		5084092C1C9DB633006AC55D /* InfiniteScrollKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5084092A1C9DB633006AC55D /* InfiniteScrollKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5091185F1C9D85850020EE5C /* FooterPull.h in Headers */ = {isa = PBXBuildFile; fileRef = 5091185E1C9D85850020EE5C /* FooterPull.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		509118661C9D85850020EE5C /* FooterPull.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5091185B1C9D85850020EE5C /* FooterPull.framework */; };
 		5091186B1C9D85850020EE5C /* FooterPullTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5091186A1C9D85850020EE5C /* FooterPullTests.m */; };
@@ -63,8 +63,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				508409221C9DADC5006AC55D /* InfiniteScrollKit.framework in Embed Frameworks */,
-				508409201C9DADC5006AC55D /* Fetcher.framework in Embed Frameworks */,
+				5084092C1C9DB633006AC55D /* InfiniteScrollKit.framework in Embed Frameworks */,
+				508409291C9DB5F8006AC55D /* Fetcher.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,8 +88,8 @@
 		5084090C1C9DACE4006AC55D /* ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		508409101C9DACE4006AC55D /* ExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleUITests.m; sourceTree = "<group>"; };
 		508409121C9DACE4006AC55D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5084091D1C9DADC5006AC55D /* Fetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fetcher.framework; path = ../Carthage/Build/iOS/Fetcher.framework; sourceTree = "<group>"; };
-		5084091E1C9DADC5006AC55D /* InfiniteScrollKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InfiniteScrollKit.framework; path = ../Carthage/Build/iOS/InfiniteScrollKit.framework; sourceTree = "<group>"; };
+		508409271C9DB5F8006AC55D /* Fetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fetcher.framework; sourceTree = "<group>"; };
+		5084092A1C9DB633006AC55D /* InfiniteScrollKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InfiniteScrollKit.framework; path = ../Carthage/Build/iOS/InfiniteScrollKit.framework; sourceTree = "<group>"; };
 		5091185B1C9D85850020EE5C /* FooterPull.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FooterPull.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5091185E1C9D85850020EE5C /* FooterPull.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FooterPull.h; sourceTree = "<group>"; };
 		509118601C9D85850020EE5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,8 +108,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				508409211C9DADC5006AC55D /* InfiniteScrollKit.framework in Frameworks */,
-				5084091F1C9DADC5006AC55D /* Fetcher.framework in Frameworks */,
+				5084092B1C9DB633006AC55D /* InfiniteScrollKit.framework in Frameworks */,
+				508409281C9DB5F8006AC55D /* Fetcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,8 +148,8 @@
 		508408EA1C9DACE4006AC55D /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				5084091D1C9DADC5006AC55D /* Fetcher.framework */,
-				5084091E1C9DADC5006AC55D /* InfiniteScrollKit.framework */,
+				5084092A1C9DB633006AC55D /* InfiniteScrollKit.framework */,
+				508409271C9DB5F8006AC55D /* Fetcher.framework */,
 				508408EE1C9DACE4006AC55D /* AppDelegate.h */,
 				508408EF1C9DACE4006AC55D /* AppDelegate.m */,
 				508408F11C9DACE4006AC55D /* ViewController.h */,
@@ -560,6 +560,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Example",
 				);
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -575,6 +576,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Example",
 				);
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -785,6 +787,7 @@
 				508409141C9DACE4006AC55D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5084091A1C9DACE4006AC55D /* Build configuration list for PBXNativeTarget "ExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -793,6 +796,7 @@
 				508409161C9DACE4006AC55D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5084091B1C9DACE4006AC55D /* Build configuration list for PBXNativeTarget "ExampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -801,6 +805,7 @@
 				508409181C9DACE4006AC55D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		509118551C9D85850020EE5C /* Build configuration list for PBXProject "FooterPull" */ = {
 			isa = XCConfigurationList;

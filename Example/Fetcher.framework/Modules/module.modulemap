@@ -1,0 +1,6 @@
+framework module Fetcher {
+  umbrella header "Fetcher.h"
+
+  export *
+  module * { export * }
+}
