@@ -74,6 +74,3 @@ Your code should look something like this.
     [self.tableView rrn_scrollViewDidEndDecelerating];
 }
 ```
-
-## Contributions
-Please use the 'OpenMe' workspace.
