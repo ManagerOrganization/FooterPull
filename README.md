@@ -13,7 +13,7 @@ Several pull-like loading events for table views that have scrollable content.
 ![](http://i.imgur.com/zfHf9vI.gif?1)
 
 ##Demo
-Try the Demo App by running the **Example** scheme in the **OpenMe** workspace.
+Try the Demo App by running the **Example** scheme.
 
 ## Dependencies
 
@@ -28,6 +28,8 @@ After running Carthage, add each of the following frameworks to your project, as
 
 * FooterPull.framework
 * InfiniteScrollKit.framework
+
+You may need to add a framework search path to your build settings that points at the carthage build folder.
 
 ## Implementation
 1. Build a UITableView, either in code or from interface builder.
