@@ -7,23 +7,29 @@ Footer Pull
 
 <sup>XCode 6.4+ iOS 8.0+</sup>
 
-Several pull-like loading events for table views that have scrollable content. The creative design and style of the footer view is at the mercy of the implementing developer.
+Several pull-like loading events for table views that have scrollable content.
 
 ![](http://i.imgur.com/9XxVQ31.gif?1)
 ![](http://i.imgur.com/zfHf9vI.gif?1)
 
+##Demo
+Try the Demo App by running the **Example** scheme in the **OpenMe** workspace.
+
+## Dependencies
+
+* [InfiniteScrollKit](https://github.com/rob-nash/InfiniteScrollKit.git)
+
 ## Installation with Carthage
-Add the following to your Cartfile. See [Carthage](https://github.com/Carthage/Carthage) for details.
+Add the following to your Cartfile.
 
 * github "https://github.com/rob-nash/FooterPull" >= 1.0.0
 
-## Manual Installation
-In XCode, select 'Add Files To Project', and select the following
+After running Carthage, add each of the following frameworks to your project, as embedded frameworks. See [Carthage](https://github.com/Carthage/Carthage) for details.
 
-* UITableView+RRNInfiniteScroll.h
-* UITableView+RRNInfiniteScroll.m
+* FooterPull.framework
+* InfiniteScrollKit.framework
 
-## Usage
+## Implementation
 1. Build a UITableView, either in code or from interface builder.
 
 2. Manually adjust your table view content insets as you like. So for instance, if you have a navigation controller, you may want to adjust your top inset to accomodate a navigation bar and/or the status bar.
@@ -68,9 +74,6 @@ Your code should look something like this.
     [self.tableView rrn_scrollViewDidEndDecelerating];
 }
 ```
-
-##Demo
-Try the Demo App by running the **Example** scheme in the **OpenMe** workspace.
 
 ## Contributions
 Please use the 'OpenMe' workspace.
