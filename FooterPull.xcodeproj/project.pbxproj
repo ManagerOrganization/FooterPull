@@ -22,6 +22,7 @@
 		508409291C9DB5F8006AC55D /* Fetcher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 508409271C9DB5F8006AC55D /* Fetcher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5084092B1C9DB633006AC55D /* InfiniteScrollKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5084092A1C9DB633006AC55D /* InfiniteScrollKit.framework */; };
 		5084092C1C9DB633006AC55D /* InfiniteScrollKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5084092A1C9DB633006AC55D /* InfiniteScrollKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5084092D1C9DB72D006AC55D /* InfiniteScrollKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5084092A1C9DB633006AC55D /* InfiniteScrollKit.framework */; };
 		5091185F1C9D85850020EE5C /* FooterPull.h in Headers */ = {isa = PBXBuildFile; fileRef = 5091185E1C9D85850020EE5C /* FooterPull.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		509118661C9D85850020EE5C /* FooterPull.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5091185B1C9D85850020EE5C /* FooterPull.framework */; };
 		5091186B1C9D85850020EE5C /* FooterPullTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5091186A1C9D85850020EE5C /* FooterPullTests.m */; };
@@ -131,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5084092D1C9DB72D006AC55D /* InfiniteScrollKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,7 +730,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "${PROJECT_DIR}/../../Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"${PROJECT_DIR}/../../Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FooterPull/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -746,7 +751,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "${PROJECT_DIR}/../../Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"${PROJECT_DIR}/../../Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FooterPull/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
