@@ -1,24 +1,20 @@
-Footer Pull
-===========
+Infinite Scroll Kit
+============
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg?style=plastic&label=Legal)](https://raw.githubusercontent.com/rob-nash/InfiniteScroll/master/Licence.md)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-Compatible-Greene.svg?style=plastic)](https://github.com/Carthage/Carthage)
 
 ##Description
-
 <sup>XCode 6.4+ iOS 8.0+</sup>
 
-Several pull-like loading events for table views that have scrollable content. The creative design and style of the footer view is at the mercy of the implementing developer.
-
-![](http://i.imgur.com/9XxVQ31.gif?1)
-![](http://i.imgur.com/zfHf9vI.gif?1)
+A pull-like loading event for table views that have scrollable content. The creative design and style of the footer view is at the mercy of the implementing developer. Please contribute to pre-built footer view designs, [here](https://github.com/rob-nash/InfiniteScroll).
 
 ## Installation with Carthage
 Add the following to your Cartfile. See [Carthage](https://github.com/Carthage/Carthage) for details.
 
-* github "https://github.com/rob-nash/FooterPull" >= 1.0.0
+* github "https://github.com/rob-nash/InfiniteScroll" >= 1.0.5
 
-## Manual Installation
-In XCode, select 'Add Files To Project', and select the following
+## Manual installation
+In XCode, select 'Add Files To Project', and select the following files.
 
 * UITableView+RRNInfiniteScroll.h
 * UITableView+RRNInfiniteScroll.m
@@ -68,9 +64,3 @@ Your code should look something like this.
     [self.tableView rrn_scrollViewDidEndDecelerating];
 }
 ```
-
-##Demo
-Try the Demo App by running the **Example** scheme in the **OpenMe** workspace.
-
-## Contributions
-Please use the 'OpenMe' workspace.

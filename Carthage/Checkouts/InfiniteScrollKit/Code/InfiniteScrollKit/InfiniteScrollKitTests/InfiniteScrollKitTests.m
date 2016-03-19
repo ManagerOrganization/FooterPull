@@ -1,18 +1,18 @@
 //
-//  ExampleTests.m
-//  ExampleTests
+//  InfiniteScrollKitTests.m
+//  InfiniteScrollKitTests
 //
-//  Created by Robert Nash on 07/03/2016.
+//  Created by Robert Nash on 19/03/2016.
 //  Copyright © 2016 Robert Nash. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface ExampleTests : XCTestCase
+@interface InfiniteScrollKitTests : XCTestCase
 
 @end
 
-@implementation ExampleTests
+@implementation InfiniteScrollKitTests
 
 - (void)setUp {
     [super setUp];

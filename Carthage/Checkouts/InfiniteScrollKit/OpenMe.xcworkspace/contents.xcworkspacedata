@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Code/FooterPull/FooterPull.xcodeproj">
+      location = "group:Code/InfiniteScrollKit/InfiniteScrollKit.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Code/Example/Example.xcodeproj">

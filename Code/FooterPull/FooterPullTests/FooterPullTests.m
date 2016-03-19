@@ -1,18 +1,18 @@
 //
-//  ExampleTests.m
-//  ExampleTests
+//  FooterPullTests.m
+//  FooterPullTests
 //
-//  Created by Robert Nash on 07/03/2016.
+//  Created by Robert Nash on 19/03/2016.
 //  Copyright © 2016 Robert Nash. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface ExampleTests : XCTestCase
+@interface FooterPullTests : XCTestCase
 
 @end
 
-@implementation ExampleTests
+@implementation FooterPullTests
 
 - (void)setUp {
     [super setUp];
