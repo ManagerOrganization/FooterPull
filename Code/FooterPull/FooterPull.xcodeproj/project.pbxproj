@@ -14,6 +14,7 @@
 		5091187A1C9D85B20020EE5C /* RRNFooterViewBugs.m in Sources */ = {isa = PBXBuildFile; fileRef = 509118761C9D85B20020EE5C /* RRNFooterViewBugs.m */; };
 		5091187B1C9D85B20020EE5C /* RRNFooterViewSpinner.h in Headers */ = {isa = PBXBuildFile; fileRef = 509118771C9D85B20020EE5C /* RRNFooterViewSpinner.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5091187C1C9D85B20020EE5C /* RRNFooterViewSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 509118781C9D85B20020EE5C /* RRNFooterViewSpinner.m */; };
+		509118911C9D9F220020EE5C /* RRNFooterPullAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 509118901C9D9F220020EE5C /* RRNFooterPullAssets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		509118761C9D85B20020EE5C /* RRNFooterViewBugs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRNFooterViewBugs.m; sourceTree = "<group>"; };
 		509118771C9D85B20020EE5C /* RRNFooterViewSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRNFooterViewSpinner.h; sourceTree = "<group>"; };
 		509118781C9D85B20020EE5C /* RRNFooterViewSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRNFooterViewSpinner.m; sourceTree = "<group>"; };
+		509118901C9D9F220020EE5C /* RRNFooterPullAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = RRNFooterPullAssets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,11 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				5091185E1C9D85850020EE5C /* FooterPull.h */,
-				509118751C9D85B20020EE5C /* RRNFooterViewBugs.h */,
-				509118761C9D85B20020EE5C /* RRNFooterViewBugs.m */,
-				509118771C9D85B20020EE5C /* RRNFooterViewSpinner.h */,
-				509118781C9D85B20020EE5C /* RRNFooterViewSpinner.m */,
-				509118601C9D85850020EE5C /* Info.plist */,
+				5091188E1C9D9F060020EE5C /* RRNFooterViewBugs */,
+				5091188F1C9D9F0C0020EE5C /* RRNFooterViewSpinner */,
+				5091188D1C9D9EFC0020EE5C /* SupportingFiles */,
 			);
 			path = FooterPull;
 			sourceTree = "<group>";
@@ -96,6 +96,33 @@
 				5091186C1C9D85850020EE5C /* Info.plist */,
 			);
 			path = FooterPullTests;
+			sourceTree = "<group>";
+		};
+		5091188D1C9D9EFC0020EE5C /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				509118601C9D85850020EE5C /* Info.plist */,
+				509118901C9D9F220020EE5C /* RRNFooterPullAssets.xcassets */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		5091188E1C9D9F060020EE5C /* RRNFooterViewBugs */ = {
+			isa = PBXGroup;
+			children = (
+				509118751C9D85B20020EE5C /* RRNFooterViewBugs.h */,
+				509118761C9D85B20020EE5C /* RRNFooterViewBugs.m */,
+			);
+			name = RRNFooterViewBugs;
+			sourceTree = "<group>";
+		};
+		5091188F1C9D9F0C0020EE5C /* RRNFooterViewSpinner */ = {
+			isa = PBXGroup;
+			children = (
+				509118771C9D85B20020EE5C /* RRNFooterViewSpinner.h */,
+				509118781C9D85B20020EE5C /* RRNFooterViewSpinner.m */,
+			);
+			name = RRNFooterViewSpinner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				509118911C9D9F220020EE5C /* RRNFooterPullAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

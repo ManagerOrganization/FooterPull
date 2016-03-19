@@ -33,7 +33,7 @@
     
     CGRect frame = CGRectMake(0, 0, self.tableView.frame.size.width, 60.0f);
     
-    RRNFooterViewSpinner <RRNInfiniteScrollFooterViewProtocol> *view = [[RRNFooterViewSpinner alloc] initWithFrame:frame];
+    RRNFooterViewBugs <RRNInfiniteScrollFooterViewProtocol> *view = [[RRNFooterViewBugs alloc] initWithFrame:frame];
     
     __weak typeof(self) weakSelf = self;
     

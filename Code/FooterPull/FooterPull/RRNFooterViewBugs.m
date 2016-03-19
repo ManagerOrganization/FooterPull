@@ -31,15 +31,17 @@ typedef enum : NSUInteger {
     return _containerView;
 }
 
-#define IMAGE_1_DARK [UIImage imageNamed:@"11"]
-#define IMAGE_1_LIGHT [UIImage imageNamed:@"1"]
-#define IMAGE_2_DARK [UIImage imageNamed:@"22"]
-#define IMAGE_2_LIGHT [UIImage imageNamed:@"2"]
-#define IMAGE_3_DARK [UIImage imageNamed:@"33"]
-#define IMAGE_3_LIGHT [UIImage imageNamed:@"3"]
+#define BUNDLE [NSBundle bundleForClass:[self class]]
+#define IMAGE_1_DARK [UIImage imageNamed:@"11" inBundle:BUNDLE compatibleWithTraitCollection:nil]
+#define IMAGE_1_LIGHT [UIImage imageNamed:@"1" inBundle:BUNDLE compatibleWithTraitCollection:nil]
+#define IMAGE_2_DARK [UIImage imageNamed:@"22" inBundle:BUNDLE compatibleWithTraitCollection:nil]
+#define IMAGE_2_LIGHT [UIImage imageNamed:@"2" inBundle:BUNDLE compatibleWithTraitCollection:nil]
+#define IMAGE_3_DARK [UIImage imageNamed:@"33" inBundle:BUNDLE compatibleWithTraitCollection:nil]
+#define IMAGE_3_LIGHT [UIImage imageNamed:@"3" inBundle:BUNDLE compatibleWithTraitCollection:nil]
 
 -(UIImageView *)bug1 {
     if (_bug1 == nil) {
+        
         _bug1 = [[UIImageView alloc] initWithImage:IMAGE_1_DARK];
         _bug1.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
     }
