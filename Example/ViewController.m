@@ -33,11 +33,9 @@
     
     CGRect frame = CGRectMake(0, 0, self.tableView.frame.size.width, 60.0f);
     
-    RRNFooterViewBugs <RRNInfiniteScrollFooterViewProtocol> *view = [[RRNFooterViewBugs alloc] initWithFrame:frame];
-    
     __weak typeof(self) weakSelf = self;
     
-    [self.tableView rrn_infinitScrollWithFooter:view
+    [self.tableView rrn_infinitScrollWithFooter:[self footerViewWithFrame:frame]
                                withTriggerBlock:^{
                                    
                                    __strong typeof (weakSelf) strongSelf = weakSelf;
@@ -46,6 +44,19 @@
                                                                        withCompletion:[strongSelf fetchNextPageCompletionHandler]];
                                    
                                }];
+}
+
+-(UIView <RRNInfiniteScrollFooterViewProtocol> *)footerViewWithFrame:(CGRect)frame {
+    
+    NSString *footer = [[NSProcessInfo processInfo] environment][@"FOOTER_VIEW"];//Provided by scheme
+    
+    if ([footer isEqualToString:@"Bugs"]) {
+        return [[RRNFooterViewBugs alloc] initWithFrame:frame];
+    } else if ([footer isEqualToString:@"Spinner"]) {
+        return [[RRNFooterViewSpinner alloc] initWithFrame:frame];
+    }
+    
+    return nil;
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle {

@@ -73,6 +73,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5035878B1CA04DFC00983795 /* FetcherReadMe */ = {isa = PBXFileReference; lastKnownFileType = text; path = FetcherReadMe; sourceTree = "<group>"; };
 		508408E91C9DACE4006AC55D /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		508408EC1C9DACE4006AC55D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		508408EE1C9DACE4006AC55D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -147,19 +148,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		508408EA1C9DACE4006AC55D /* Example */ = {
+		5035878A1CA04DE300983795 /* Fetcher */ = {
+			isa = PBXGroup;
+			children = (
+				508409271C9DB5F8006AC55D /* Fetcher.framework */,
+				5035878B1CA04DFC00983795 /* FetcherReadMe */,
+			);
+			name = Fetcher;
+			sourceTree = "<group>";
+		};
+		5035878C1CA04E0700983795 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
 				5084092A1C9DB633006AC55D /* InfiniteScrollKit.framework */,
-				508409271C9DB5F8006AC55D /* Fetcher.framework */,
-				508408EE1C9DACE4006AC55D /* AppDelegate.h */,
-				508408EF1C9DACE4006AC55D /* AppDelegate.m */,
+				5035878A1CA04DE300983795 /* Fetcher */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		5035878D1CA04E1100983795 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				508408F11C9DACE4006AC55D /* ViewController.h */,
 				508408F21C9DACE4006AC55D /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		5035878E1CA04E1800983795 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				508408EE1C9DACE4006AC55D /* AppDelegate.h */,
+				508408EF1C9DACE4006AC55D /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		5035878F1CA04E1E00983795 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
 				508408F41C9DACE4006AC55D /* Main.storyboard */,
-				508408F71C9DACE4006AC55D /* Assets.xcassets */,
 				508408F91C9DACE4006AC55D /* LaunchScreen.storyboard */,
-				508408FC1C9DACE4006AC55D /* Info.plist */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		508408EA1C9DACE4006AC55D /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				5035878C1CA04E0700983795 /* Dependencies */,
+				5035878E1CA04E1800983795 /* AppDelegate */,
+				5035878D1CA04E1100983795 /* Controller */,
+				5035878F1CA04E1E00983795 /* Storyboards */,
 				508408EB1C9DACE4006AC55D /* Supporting Files */,
 			);
 			path = Example;
@@ -168,6 +208,8 @@
 		508408EB1C9DACE4006AC55D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				508408F71C9DACE4006AC55D /* Assets.xcassets */,
+				508408FC1C9DACE4006AC55D /* Info.plist */,
 				508408EC1C9DACE4006AC55D /* main.m */,
 			);
 			name = "Supporting Files";
