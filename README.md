@@ -7,8 +7,7 @@ Example implementations of [InfiniteScrollKit](https://github.com/rob-nash/Infin
 
 As you can see, I'm not a designer. If anyone would like to contribute a design, please submit a pull request.
 
-![](http://i.imgur.com/9XxVQ31.gif?1)
-![](http://i.imgur.com/zfHf9vI.gif?1)
+![](http://i.imgur.com/eYyPetI.gif)
 
 ##Demo
 Run each of the supplied XCode schemes, to see the examples in action.
